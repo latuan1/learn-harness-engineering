@@ -413,6 +413,43 @@ const arSkillItems = [
   { text: "نظرة عامة على المهارات", link: "/ar/skills/" }
 ];
 
+const trLectureItems = [
+  { text: "Hoş geldiniz", link: "/tr/" },
+  { text: "Güçlü Ajanlar Neden Hâlâ Başarısız Olur", link: "/tr/lectures/lecture-01-why-capable-agents-still-fail/" },
+  { text: "Harness Aslında Nedir", link: "/tr/lectures/lecture-02-what-a-harness-actually-is/" },
+  { text: "Depo Neden Kayıt Sistemi Olmalı", link: "/tr/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/" },
+  { text: "Tek Bir Dev Talimat Dosyası Neden Yetmez", link: "/tr/lectures/lecture-04-why-one-giant-instruction-file-fails/" },
+  { text: "Uzun Süren Görevler Neden Sürekliliği Kaybeder", link: "/tr/lectures/lecture-05-why-long-running-tasks-lose-continuity/" },
+  { text: "Başlatma Neden Kendine Ait Bir Aşama Olmalı", link: "/tr/lectures/lecture-06-why-initialization-needs-its-own-phase/" },
+  { text: "Ajanlar Neden Sınırı Aşar ve Bitirmez", link: "/tr/lectures/lecture-07-why-agents-overreach-and-under-finish/" },
+  { text: "Özellik Listeleri Neden Harness’ın Temel Yapı Taşı", link: "/tr/lectures/lecture-08-why-feature-lists-are-harness-primitives/" },
+  { text: "Ajanlar Neden Zaferi Çok Erken İlan Eder", link: "/tr/lectures/lecture-09-why-agents-declare-victory-too-early/" },
+  { text: "Uçtan Uca Test Sonuçları Neden Değiştirir", link: "/tr/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
+  { text: "Gözlemlenebilirlik Neden Harness’ın İçinde Olmalı", link: "/tr/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
+  { text: "Her Oturum Neden Temiz Bir Durumla Bitmeli", link: "/tr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+];
+
+const trProjectItems = [
+  { text: "Hoş geldiniz", link: "/tr/projects/" },
+  { text: "Yalnızca Prompt vs. Önce Kurallar", link: "/tr/projects/project-01-baseline-vs-minimal-harness/" },
+  { text: "Ajanın Okuyabildiği Çalışma Alanı", link: "/tr/projects/project-02-agent-readable-workspace/" },
+  { text: "Çok Oturumlu Süreklilik", link: "/tr/projects/project-03-multi-session-continuity/" },
+  { text: "Çalışma Zamanı Geri Bildirimi ve Kapsam Kontrolü", link: "/tr/projects/project-04-incremental-indexing/" },
+  { text: "Öz-Doğrulama ve Rol Ayrımı", link: "/tr/projects/project-05-grounded-qa-verification/" },
+  { text: "Eksiksiz Harness (Bitirme Projesi)", link: "/tr/projects/project-06-runtime-observability-and-debugging/" }
+];
+
+const trResourceItems = [
+  { text: "Genel Bakış", link: "/tr/resources/" },
+  { text: "Şablonlar", link: "/tr/resources/templates/" },
+  { text: "Referans", link: "/tr/resources/reference/" },
+  { text: "Gelişmiş Paket", link: "/tr/resources/openai-advanced/" }
+];
+
+const trSkillItems = [
+  { text: "Yetenekler Genel Bakış", link: "/tr/skills/" }
+];
+
 const zhTWLectureItems = [
   { text: "歡迎", link: "/zh-TW/" },
   { text: "模型能力強，不等於執行可靠", link: "/zh-TW/lectures/lecture-01-why-capable-agents-still-fail/" },
@@ -456,11 +493,12 @@ const frSourceItems = { lectures: frLectureItems, projects: frProjectItems, reso
 const deSourceItems = { lectures: deLectureItems, projects: deProjectItems, resources: deResourceItems, skills: deSkillItems };
 const arSourceItems = { lectures: arLectureItems, projects: arProjectItems, resources: arResourceItems, skills: arSkillItems };
 const zhTWSourceItems = { lectures: zhTWLectureItems, projects: zhTWProjectItems, resources: zhTWResourceItems, skills: zhTWSkillItems };
+const trSourceItems = { lectures: trLectureItems, projects: trProjectItems, resources: trResourceItems, skills: trSkillItems };
 
 const relinkItems = (items: Array<{ text: string; link: string }>, locale: string) =>
   items.map((item) => ({
     ...item,
-    link: item.link.replace(/^\/(en|zh|vi|ko|uz|ru|ja|es|fr|de|ar|zh-TW)\//, `/${locale}/`)
+    link: item.link.replace(/^\/(en|zh|vi|ko|uz|ru|ja|es|fr|de|ar|zh-TW|tr)\//, `/${locale}/`)
   }));
 
 const createLocaleTheme = (
@@ -753,6 +791,28 @@ export default withMermaid(
           darkModeSwitch: "Theme",
           lightModeSwitchTitle: "Zum hellen Theme wechseln",
           darkModeSwitchTitle: "Zum dunklen Theme wechseln"
+        })
+      },
+      tr: {
+        label: "Türkçe",
+        lang: "tr-TR",
+        link: "/tr/",
+        themeConfig: createLocaleTheme("tr", trSourceItems, {
+          lectures: "Dersler",
+          projects: "Projeler",
+          resources: "Kütüphane",
+          skills: "Yetenekler",
+          resourceLibrary: "Kaynak Kütüphanesi",
+          tryHarness: "Harness'ı Dene ↗",
+          outline: "Bu sayfada",
+          prev: "Önceki",
+          next: "Sonraki",
+          lastUpdated: "Son güncelleme",
+          returnToTop: "Başa dön",
+          sidebarMenu: "Menü",
+          darkModeSwitch: "Tema",
+          lightModeSwitchTitle: "Açık temaya geç",
+          darkModeSwitchTitle: "Koyu temaya geç"
         })
       },
       ar: {

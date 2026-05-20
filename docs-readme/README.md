@@ -17,3 +17,4 @@ Translated README files live in this directory:
 - [العربية](ar-SA/README.md)
 - [Tiếng Việt](vi-VN/README.md)
 - [Oʻzbekcha](uz-UZ/README.md)
+- [Türkçe](tr-TR/README.md)
