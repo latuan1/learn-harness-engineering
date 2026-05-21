@@ -78,9 +78,9 @@ Python 3.11 FastAPI backend, PostgreSQL 15 database.
 - All PRs must pass pytest + mypy --strict + ruff check
 
 ## Topic Docs
-- [API Design Patterns](docs/api-patterns.md) — Required reading when adding endpoints
-- [Database Rules](docs/database-rules.md) — Required when modifying database operations
-- [Testing Standards](docs/testing-standards.md) — Reference when writing tests
+- API Design Patterns (`docs/api-patterns.md`) — Required reading when adding endpoints
+- Database Rules (`docs/database-rules.md`) — Required when modifying database operations
+- Testing Standards (`docs/testing-standards.md`) — Reference when writing tests
 ```
 
 Chaque document thématique fait 50-150 lignes, organisé par sujet dans `docs/` ou près du module correspondant. L'agent ne les lit que lorsque c'est nécessaire. Comme des pochettes de rangement dans une valise : les sous-vêtements dans l'une, les produits de toilette dans une autre, les chargeurs dans une troisième. Trouver quelque chose n'exige pas de vider tout le sac.

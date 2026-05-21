@@ -42,5 +42,5 @@ npm install
 
 ## 관련 강의
 
-- [강의 01: 강력한 모델이 왜 여전히 실패하는가](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md)
-- [강의 02: 하네스가 실제로 무엇인가](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md)
+- [강의 01: 강력한 모델이 왜 여전히 실패하는가](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md)
+- [강의 02: 하네스가 실제로 무엇인가](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md)

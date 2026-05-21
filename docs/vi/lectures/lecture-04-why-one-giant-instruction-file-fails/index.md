@@ -78,9 +78,9 @@ Backend FastAPI Python 3.11, cơ sở dữ liệu PostgreSQL 15.
 - Tất cả PR phải vượt qua pytest + mypy --strict + ruff check
 
 ## Tài liệu Chủ đề
-- [Mẫu Thiết kế API](docs/api-patterns.md) — Đọc bắt buộc khi thêm endpoint
-- [Quy tắc Cơ sở dữ liệu](docs/database-rules.md) — Bắt buộc khi sửa đổi hoạt động cơ sở dữ liệu
-- [Tiêu chuẩn Testing](docs/testing-standards.md) — Tham khảo khi viết test
+- Mẫu Thiết kế API (`docs/api-patterns.md`) — Đọc bắt buộc khi thêm endpoint
+- Quy tắc Cơ sở dữ liệu (`docs/database-rules.md`) — Bắt buộc khi sửa đổi hoạt động cơ sở dữ liệu
+- Tiêu chuẩn Testing (`docs/testing-standards.md`) — Tham khảo khi viết test
 ```
 
 Mỗi tài liệu chủ đề có 50-150 dòng, được tổ chức theo chủ đề trong thư mục `docs/` hoặc cạnh module tương ứng. Agent chỉ đọc chúng khi cần. Giống như túi đựng đồ trong vali — đồ lót một túi, đồ vệ sinh một túi, dây sạc một túi. Tìm đồ không cần đổ toàn bộ túi.

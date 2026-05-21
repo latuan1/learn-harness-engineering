@@ -35,5 +35,5 @@ npm install
 
 ## 관련 강의
 
-- [강의 03: 저장소가 왜 단일 진실 원천이어야 하는가](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md)
-- [강의 04: 왜 하나의 거대한 지시 파일이 실패하는가](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md)
+- [강의 03: 저장소가 왜 단일 진실 원천이어야 하는가](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md)
+- [강의 04: 왜 하나의 거대한 지시 파일이 실패하는가](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md)

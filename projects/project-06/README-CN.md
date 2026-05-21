@@ -54,5 +54,5 @@ Project 06 是完整产品 + 弱 harness 表面，与完整产品 + 强 harness 
 
 ## 对应课件
 
-- [Lecture 11: 让代理的运行时可观测](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md)
-- [Lecture 12: 每次会话都要留下干净的状态](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md)
+- [Lecture 11: 让代理的运行时可观测](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md)
+- [Lecture 12: 每次会话都要留下干净的状态](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md)

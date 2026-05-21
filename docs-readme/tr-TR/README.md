@@ -315,29 +315,29 @@ Yarı zamanlı ilerliyorsanız her aşama yaklaşık bir hafta sürer. Daha hız
 
 | Oturum | Soru | Temel Fikir |
 |---------|------|-------------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Güçlü modeller gerçek görevlerde neden hâlâ başarısız olur? | Benchmark'lar ile gerçek mühendislik arasındaki yetenek boşluğu |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | "Harness" aslında ne demek? | Beş alt sistem: talimatlar, durum, doğrulama, kapsam, yaşam döngüsü |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Depo neden tek kayıt sistemi olmalı? | Ajan göremiyorsa, o şey yok demektir |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Tek bir dev talimat dosyası neden yetmez? | Aşamalı açılım: bir harita verin, ansiklopedi değil |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Uzun süren görevler neden sürekliliği kaybeder? | İlerlemeyi diske yaz; kaldığın yerden devam et |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Başlatma neden kendine ait bir aşama olmalı? | Ajan işe başlamadan önce ortamın sağlıklı olduğunu doğrula |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Ajanlar neden sınırı aşar ve yarım bırakır? | Bir seferde tek özellik; bittinin açık tanımı |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Özellik listeleri neden harness'ın temel yapı taşı? | Ajanın görmezden gelemeyeceği, makine okur kapsam sınırları |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Ajanlar neden zaferi çok erken ilan eder? | Doğrulama boşlukları: güven ≠ doğruluk |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Uçtan uca test sonuçları neden değiştirir? | Yalnızca tam hat koşusu gerçek doğrulama sayılır |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Gözlemlenebilirlik neden harness'ın içinde olmalı? | Ajanın ne yaptığını göremiyorsanız, bozduğunu da düzeltemezsiniz |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Her oturum neden temiz bir durumla bitmeli? | Sonraki oturumun başarısı bu oturumun temizliğine bağlıdır |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Güçlü modeller gerçek görevlerde neden hâlâ başarısız olur? | Benchmark'lar ile gerçek mühendislik arasındaki yetenek boşluğu |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | "Harness" aslında ne demek? | Beş alt sistem: talimatlar, durum, doğrulama, kapsam, yaşam döngüsü |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Depo neden tek kayıt sistemi olmalı? | Ajan göremiyorsa, o şey yok demektir |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Tek bir dev talimat dosyası neden yetmez? | Aşamalı açılım: bir harita verin, ansiklopedi değil |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Uzun süren görevler neden sürekliliği kaybeder? | İlerlemeyi diske yaz; kaldığın yerden devam et |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Başlatma neden kendine ait bir aşama olmalı? | Ajan işe başlamadan önce ortamın sağlıklı olduğunu doğrula |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Ajanlar neden sınırı aşar ve yarım bırakır? | Bir seferde tek özellik; bittinin açık tanımı |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Özellik listeleri neden harness'ın temel yapı taşı? | Ajanın görmezden gelemeyeceği, makine okur kapsam sınırları |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Ajanlar neden zaferi çok erken ilan eder? | Doğrulama boşlukları: güven ≠ doğruluk |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Uçtan uca test sonuçları neden değiştirir? | Yalnızca tam hat koşusu gerçek doğrulama sayılır |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Gözlemlenebilirlik neden harness'ın içinde olmalı? | Ajanın ne yaptığını göremiyorsanız, bozduğunu da düzeltemezsiniz |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Her oturum neden temiz bir durumla bitmeli? | Sonraki oturumun başarısı bu oturumun temizliğine bağlıdır |
 
 ### Projeler — ders yöntemlerini aynı Electron uygulamasına uygulayan 6 uygulamalı proje
 
 | Proje | Ne yaparsınız | Harness Mekanizması |
 |---------|---------------|----------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | Aynı görevi iki kez çalıştırın: yalnızca prompt vs. önce kurallar | Minimal harness: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | Depoyu ajanın okuyabileceği şekilde yeniden yapılandırın | Ajanın okuyabildiği çalışma alanı + kalıcı durum dosyaları |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | Ajanın kaldığı yerden devam etmesini sağlayın | İlerleme günlüğü + oturum devri + çok oturumlu süreklilik |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | Ajanın çok fazla ya da çok az iş yapmasını engelleyin | Runtime geri bildirimi + kapsam kontrolü + artımlı dizinleme |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | Ajanın kendi işini doğrulamasını sağlayın | Öz-doğrulama + dayanaklı Soru-Cevap + kanıta dayalı tamamlama |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | Eksiksiz bir harness'ı sıfırdan kurun (bitirme projesi) | Tam harness: tüm mekanizmalar + gözlemlenebilirlik + ablasyon çalışması |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | Aynı görevi iki kez çalıştırın: yalnızca prompt vs. önce kurallar | Minimal harness: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | Depoyu ajanın okuyabileceği şekilde yeniden yapılandırın | Ajanın okuyabildiği çalışma alanı + kalıcı durum dosyaları |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | Ajanın kaldığı yerden devam etmesini sağlayın | İlerleme günlüğü + oturum devri + çok oturumlu süreklilik |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | Ajanın çok fazla ya da çok az iş yapmasını engelleyin | Runtime geri bildirimi + kapsam kontrolü + artımlı dizinleme |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | Ajanın kendi işini doğrulamasını sağlayın | Öz-doğrulama + dayanaklı Soru-Cevap + kanıta dayalı tamamlama |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Eksiksiz bir harness'ı sıfırdan kurun (bitirme projesi) | Tam harness: tüm mekanizmalar + gözlemlenebilirlik + ablasyon çalışması |
 
 ```text
     PROJE EVRİMİ

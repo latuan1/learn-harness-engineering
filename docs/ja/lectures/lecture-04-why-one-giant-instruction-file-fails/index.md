@@ -78,9 +78,9 @@ Python 3.11 FastAPI backend, PostgreSQL 15 database.
 - All PRs must pass pytest + mypy --strict + ruff check
 
 ## Topic Docs
-- [API Design Patterns](docs/api-patterns.md) — Required reading when adding endpoints
-- [Database Rules](docs/database-rules.md) — Required when modifying database operations
-- [Testing Standards](docs/testing-standards.md) — Reference when writing tests
+- API Design Patterns (`docs/api-patterns.md`) — Required reading when adding endpoints
+- Database Rules (`docs/database-rules.md`) — Required when modifying database operations
+- Testing Standards (`docs/testing-standards.md`) — Reference when writing tests
 ```
 
 各トピック文書は 50-150 行にし、`docs/` ディレクトリか対応モジュールの近くで主題ごとに整理する。エージェントは必要なときだけ読む。スーツケースのパッキングキューブのようなものだ。下着は 1 つ、洗面用品は別、充電器はさらに別。探し物のためにバッグ全体を空にする必要はない。

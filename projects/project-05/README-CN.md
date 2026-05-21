@@ -51,5 +51,5 @@ cd solution/plan-gen-eval && npm install # 完整三角色模式
 
 ## 对应课件
 
-- [Lecture 09: 阻止代理过早宣布胜利](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md)
-- [Lecture 10: 只有全流程运行才算真正的验证](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md)
+- [Lecture 09: 阻止代理过早宣布胜利](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md)
+- [Lecture 10: 只有全流程运行才算真正的验证](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md)

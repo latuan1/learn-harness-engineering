@@ -36,5 +36,5 @@ npm install
 
 ## 관련 강의
 
-- [강의 07: 에이전트에게 명확한 작업 경계를 설정하는 방법](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md)
-- [강의 08: 기능 목록으로 에이전트 행동을 제약하는 방법](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md)
+- [강의 07: 에이전트에게 명확한 작업 경계를 설정하는 방법](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md)
+- [강의 08: 기능 목록으로 에이전트 행동을 제약하는 방법](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md)

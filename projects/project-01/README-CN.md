@@ -54,5 +54,5 @@ documents and answer questions." 请用 solution 中的 harness 文件把这句�
 
 ## 对应课件
 
-- [Lecture 01: 为什么强大的模型仍然会失败](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md)
-- [Lecture 02: Harness 到底是什么](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md)
+- [Lecture 01: 为什么强大的模型仍然会失败](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md)
+- [Lecture 02: Harness 到底是什么](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md)

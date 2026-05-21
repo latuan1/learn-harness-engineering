@@ -315,29 +315,29 @@ Chaque phase prend environ une semaine si vous suivez le cours à temps partiel.
 
 | Session | Question | Idée Centrale |
 |---------|----------|---------------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Pourquoi les modèles performants échouent-ils encore sur des tâches réelles ? | L'écart de capacité entre les benchmarks et l'ingénierie réelle |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | Que signifie réellement « harness » ? | Cinq sous-systèmes : instructions, état, vérification, portée, cycle de vie |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Pourquoi le dépôt doit-il être l'unique source de vérité ? | Si l'agent ne peut pas le voir, ça n'existe pas |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Pourquoi un seul fichier d'instructions géant échoue-t-il ? | Divulgation progressive : donnez une carte, pas une encyclopédie |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Pourquoi les tâches de longue durée perdent-elles leur continuité ? | Persister le progrès sur disque ; reprendre là où vous vous êtes arrêté |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Pourquoi l'initialisation nécessite-t-elle sa propre phase ? | Vérifier que l'environnement est sain avant que l'agent ne commence à travailler |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Pourquoi les agents vont-ils trop loin et n'en font-ils pas assez ? | Une seule fonctionnalité à la fois ; définition explicite de « terminé » |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Pourquoi les listes de fonctionnalités sont-elles des primitives du harness ? | Des limites de portée lisibles par machine que l'agent ne peut pas ignorer |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Pourquoi les agents déclarent-ils victoire trop tôt ? | Lacunes de vérification : confiance ≠ correction |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Pourquoi les tests de bout en bout changent-ils les résultats ? | Seule une exécution complète du pipeline compte comme véritable vérification |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Pourquoi l'observabilité appartient-elle au harness ? | Si vous ne pouvez pas voir ce que l'agent a fait, vous ne pouvez pas corriger ce qu'il a cassé |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Pourquoi chaque session doit-elle laisser un état propre ? | Le succès de la prochaine session dépend du nettoyage de celle-ci |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Pourquoi les modèles performants échouent-ils encore sur des tâches réelles ? | L'écart de capacité entre les benchmarks et l'ingénierie réelle |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | Que signifie réellement « harness » ? | Cinq sous-systèmes : instructions, état, vérification, portée, cycle de vie |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Pourquoi le dépôt doit-il être l'unique source de vérité ? | Si l'agent ne peut pas le voir, ça n'existe pas |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Pourquoi un seul fichier d'instructions géant échoue-t-il ? | Divulgation progressive : donnez une carte, pas une encyclopédie |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Pourquoi les tâches de longue durée perdent-elles leur continuité ? | Persister le progrès sur disque ; reprendre là où vous vous êtes arrêté |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Pourquoi l'initialisation nécessite-t-elle sa propre phase ? | Vérifier que l'environnement est sain avant que l'agent ne commence à travailler |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Pourquoi les agents vont-ils trop loin et n'en font-ils pas assez ? | Une seule fonctionnalité à la fois ; définition explicite de « terminé » |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Pourquoi les listes de fonctionnalités sont-elles des primitives du harness ? | Des limites de portée lisibles par machine que l'agent ne peut pas ignorer |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Pourquoi les agents déclarent-ils victoire trop tôt ? | Lacunes de vérification : confiance ≠ correction |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Pourquoi les tests de bout en bout changent-ils les résultats ? | Seule une exécution complète du pipeline compte comme véritable vérification |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Pourquoi l'observabilité appartient-elle au harness ? | Si vous ne pouvez pas voir ce que l'agent a fait, vous ne pouvez pas corriger ce qu'il a cassé |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Pourquoi chaque session doit-elle laisser un état propre ? | Le succès de la prochaine session dépend du nettoyage de celle-ci |
 
 ### Projets -- 6 projets pratiques appliquant les méthodes des cours à la même application Electron
 
 | Projet | Ce que vous faites | Mécanisme du Harness |
 |--------|--------------------|----------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | Exécuter la même tâche deux fois : avec prompts seuls vs. avec règles d'abord | Harness minimal : AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | Restructurer le dépôt pour que l'agent puisse le lire | Espace de travail lisible par l'agent + fichiers d'état persistants |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | Faire en sorte que l'agent reprenne là où il s'est arrêté | Journal de progression + transfert de session + continuité multi-sessions |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | Empêcher l'agent d'en faire trop ou pas assez | Retour d'exécution + contrôle de portée + indexation incrémentale |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | Faire en sorte que l'agent vérifie son propre travail | Auto-vérification + Q&A fondé + achèvement basé sur les preuves |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | Construire un harness complet à partir de zéro (projet final) | Harness complet : tous les mécanismes + observabilité + étude d'ablation |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | Exécuter la même tâche deux fois : avec prompts seuls vs. avec règles d'abord | Harness minimal : AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | Restructurer le dépôt pour que l'agent puisse le lire | Espace de travail lisible par l'agent + fichiers d'état persistants |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | Faire en sorte que l'agent reprenne là où il s'est arrêté | Journal de progression + transfert de session + continuité multi-sessions |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | Empêcher l'agent d'en faire trop ou pas assez | Retour d'exécution + contrôle de portée + indexation incrémentale |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | Faire en sorte que l'agent vérifie son propre travail | Auto-vérification + Q&A fondé + achèvement basé sur les preuves |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Construire un harness complet à partir de zéro (projet final) | Harness complet : tous les mécanismes + observabilité + étude d'ablation |
 
 ```text
     ÉVOLUTION DES PROJETS

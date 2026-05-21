@@ -43,5 +43,5 @@ npm install
 
 ## 관련 강의
 
-- [강의 11: 에이전트의 런타임을 가관측하게 만드는 방법](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md)
-- [강의 12: 모든 세션이 왜 깨끗한 상태를 남겨야 하는가](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md)
+- [강의 11: 에이전트의 런타임을 가관측하게 만드는 방법](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md)
+- [강의 12: 모든 세션이 왜 깨끗한 상태를 남겨야 하는가](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md)

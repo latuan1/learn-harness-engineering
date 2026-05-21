@@ -78,9 +78,9 @@ Python 3.11 FastAPI 백엔드, PostgreSQL 15 데이터베이스.
 - 모든 PR은 pytest + mypy --strict + ruff check를 통과해야 함
 
 ## 주제 문서
-- [API 설계 패턴](docs/api-patterns.md) — 엔드포인트 추가 시 필독
-- [데이터베이스 규칙](docs/database-rules.md) — 데이터베이스 작업 수정 시 필독
-- [테스트 표준](docs/testing-standards.md) — 테스트 작성 시 참조
+- API 설계 패턴 (`docs/api-patterns.md`) — 엔드포인트 추가 시 필독
+- 데이터베이스 규칙 (`docs/database-rules.md`) — 데이터베이스 작업 수정 시 필독
+- 테스트 표준 (`docs/testing-standards.md`) — 테스트 작성 시 참조
 ```
 
 각 주제 문서는 50~150줄이며, `docs/` 디렉터리 또는 해당 모듈 옆에 주제별로 정리됩니다. 에이전트는 필요할 때만 읽습니다. 여행 가방 안의 패킹 큐브와 같습니다. 속옷은 한 큐브에, 세면도구는 다른 큐브에, 충전기는 세 번째 큐브에. 전체 가방을 비우지 않아도 원하는 것을 찾을 수 있습니다.

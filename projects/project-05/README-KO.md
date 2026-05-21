@@ -37,5 +37,5 @@ cd solution/plan-gen-eval && npm install # 완전한 3역할 모드
 
 ## 관련 강의
 
-- [강의 09: 에이전트가 너무 일찍 완료를 선언하지 못하도록 막는 방법](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md)
-- [강의 10: 전체 파이프라인 실행만이 진정한 검증인 이유](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md)
+- [강의 09: 에이전트가 너무 일찍 완료를 선언하지 못하도록 막는 방법](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md)
+- [강의 10: 전체 파이프라인 실행만이 진정한 검증인 이유](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md)

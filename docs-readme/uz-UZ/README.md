@@ -316,29 +316,29 @@ Agar parallel oʻqisangiz, har bir bosqich taxminan bir hafta davom etadi. Agar 
 
 | Sessiya | Savol | Asosiy gʻoya |
 |---------|-------|--------------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Kuchli modellar nega haqiqiy vazifalarda muvaffaqiyatsiz boʻladi? | Benchmarkʼlar va haqiqiy muhandislik oʻrtasidagi farq |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | "Harness" nima degani? | Besh quyi tizim: Koʻrsatmalar, Holat, Tekshiruv, Doira, Hayot sikli |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Nega repozitoriy yagona haqiqat manbai boʻlishi kerak? | Agar agent koʻrolmasa, u mavjud emas |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Nega bitta ulkan koʻrsatma fayli muvaffaqiyatsiz boʻladi? | Progressiv ochilish: xarita berish, ensiklopediya emas |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Nega uzoq davom etuvchi vazifalar uzluksizlikni yoʻqotadi? | Taraqqiyotni diskda saqlash; toʻxtagan joydan davom ettirish |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Nega ishga tushirish alohida bosqichga muhtoj? | Agent ishni boshlashdan oldin muhit ishlashini tekshirish |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Nega agentlar haddan oshadi va yarim-yorti tugatadi? | Bir vaqtda bitta funksiya; "Tugadi" ning aniq taʼrifi |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Nega funksiya roʻyxatlari harness primitivlari hisoblanadi? | Agent eʼtiborsiz qoldirolmaydigan, mashina oʻqiyoladigan doira chegaralari |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Nega agentlar juda erta muvaffaqiyat haqida xabar beradi? | Tekshiruv boʻshliqlari: ishonch = toʻgʻrilik emas |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Nega uchdan-uchgacha testlash natijalarni oʻzgartiradi? | Faqat toʻliq pipeline ishga tushirish haqiqiy tekshiruv hisoblanadi |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Nega kuzatuvchanlik harness ichida boʻlishi kerak? | Agent nima qilganini koʻrolmasangiz, u buzgan narsani tuzata olmaysiz |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Nega har bir sessiya toiza holat qoldirishi kerak? | Keyingi sessiyaning muvaffaqiyati shu sessiyaning tozalanishiga bogʻliq |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Kuchli modellar nega haqiqiy vazifalarda muvaffaqiyatsiz boʻladi? | Benchmarkʼlar va haqiqiy muhandislik oʻrtasidagi farq |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | "Harness" nima degani? | Besh quyi tizim: Koʻrsatmalar, Holat, Tekshiruv, Doira, Hayot sikli |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Nega repozitoriy yagona haqiqat manbai boʻlishi kerak? | Agar agent koʻrolmasa, u mavjud emas |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Nega bitta ulkan koʻrsatma fayli muvaffaqiyatsiz boʻladi? | Progressiv ochilish: xarita berish, ensiklopediya emas |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Nega uzoq davom etuvchi vazifalar uzluksizlikni yoʻqotadi? | Taraqqiyotni diskda saqlash; toʻxtagan joydan davom ettirish |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Nega ishga tushirish alohida bosqichga muhtoj? | Agent ishni boshlashdan oldin muhit ishlashini tekshirish |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Nega agentlar haddan oshadi va yarim-yorti tugatadi? | Bir vaqtda bitta funksiya; "Tugadi" ning aniq taʼrifi |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Nega funksiya roʻyxatlari harness primitivlari hisoblanadi? | Agent eʼtiborsiz qoldirolmaydigan, mashina oʻqiyoladigan doira chegaralari |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Nega agentlar juda erta muvaffaqiyat haqida xabar beradi? | Tekshiruv boʻshliqlari: ishonch = toʻgʻrilik emas |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Nega uchdan-uchgacha testlash natijalarni oʻzgartiradi? | Faqat toʻliq pipeline ishga tushirish haqiqiy tekshiruv hisoblanadi |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Nega kuzatuvchanlik harness ichida boʻlishi kerak? | Agent nima qilganini koʻrolmasangiz, u buzgan narsani tuzata olmaysiz |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Nega har bir sessiya toiza holat qoldirishi kerak? | Keyingi sessiyaning muvaffaqiyati shu sessiyaning tozalanishiga bogʻliq |
 
 ### Loyihalar — maʼruza usullarini bir xil Electron ilovasiga qoʻllaydigan 6 ta amaliy loyiha
 
 | Loyiha | Nima qilasiz | Harness mexanizmi |
 |---------|--------------|-------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | Bir xil vazifani ikki marta bajarish: faqat prompt vs. qoidalarga asoslangan | Minimal harness: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | Repoʼni agent oʻqiy oladigan qayta tuzish | Agent oʻqiy oladigan ish muhiti + doimiy holat fayllari |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | Agentni toʻxtagan joyidan davom ettirish | Taraqqiyot jurnali + sessiya uzatish + koʻp sessiyali uzluksizlik |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | Agentning koʻp yoki oz ishlashining oldini olish | Runtime fikr-mulohaza + doira nazorati + inkremental indekslash |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | Agentni oʻz ishini tekshirishga majburlash | Oʻz-oʻzini tekshirish + asoslangan S&S + dalillarga asoslangan tugatish |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | Toʻliq harnessʼni noldan qurish (yakuniy loyiha) | Toʻliq harness: barcha mexanizmlar + kuzatuvchanlik + ablyatsiya tadqiqoti |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | Bir xil vazifani ikki marta bajarish: faqat prompt vs. qoidalarga asoslangan | Minimal harness: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | Repoʼni agent oʻqiy oladigan qayta tuzish | Agent oʻqiy oladigan ish muhiti + doimiy holat fayllari |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | Agentni toʻxtagan joyidan davom ettirish | Taraqqiyot jurnali + sessiya uzatish + koʻp sessiyali uzluksizlik |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | Agentning koʻp yoki oz ishlashining oldini olish | Runtime fikr-mulohaza + doira nazorati + inkremental indekslash |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | Agentni oʻz ishini tekshirishga majburlash | Oʻz-oʻzini tekshirish + asoslangan S&S + dalillarga asoslangan tugatish |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Toʻliq harnessʼni noldan qurish (yakuniy loyiha) | Toʻliq harness: barcha mexanizmlar + kuzatuvchanlik + ablyatsiya tadqiqoti |
 
 ```text
     LOYIHA RIVOJLANISHI

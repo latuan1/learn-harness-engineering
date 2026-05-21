@@ -315,29 +315,29 @@ Harness Engineering は、モデルの周囲に完全な作業環境を構築し
 
 | セッション | 問い | コアアイデア |
 |---------|----------|-----------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | なぜ強力なモデルでも実際のタスクで失敗するのか？ | ベンチマークと実際のエンジニアリングの能力格差 |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | 「ハーネス」とは実際何を意味するのか？ | 5つのサブシステム：インストラクション、状態、検証、スコープ、ライフサイクル |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | なぜリポジトリが唯一の信頼できる情報源でなければならないのか？ | エージェントが見られないものは存在しない |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | なぜ一つの巨大な指示ファイルは失敗するのか？ | 段階的開示：百科事典ではなく地図を与える |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | なぜ長時間実行タスクは連続性を失うのか？ | 進捗をディスクに永続化し、前回の続きから再開する |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | なぜ初期化に独自のフェーズが必要なのか？ | エージェントが作業を開始する前に環境が健全であることを確認する |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | なぜエージェントは過剰に手を出し、不足して終わるのか？ | 一度に一つの機能、明確な完了の定義 |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | なぜ機能リストはハーネスのプリミティブなのか？ | エージェントが無視できない機械可読なスコープ境界 |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | なぜエージェントは早すぎる完了を宣言するのか？ | 検証のギャップ：確信 ≠ 正確性 |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | なぜエンドツーエンドテストが結果を変えるのか？ | 完全なパイプライン実行のみが本当の検証として認められる |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | なぜオブザーバビリティはハーネス内にあるべきなのか？ | エージェントが何をしたか見えなければ、何を壊したか修正できない |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | なぜすべてのセッションがクリーンな状態を残さなければならないのか？ | 次のセッションの成功は、このセッションのクリーンアップに依存する |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | なぜ強力なモデルでも実際のタスクで失敗するのか？ | ベンチマークと実際のエンジニアリングの能力格差 |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | 「ハーネス」とは実際何を意味するのか？ | 5つのサブシステム：インストラクション、状態、検証、スコープ、ライフサイクル |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | なぜリポジトリが唯一の信頼できる情報源でなければならないのか？ | エージェントが見られないものは存在しない |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | なぜ一つの巨大な指示ファイルは失敗するのか？ | 段階的開示：百科事典ではなく地図を与える |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | なぜ長時間実行タスクは連続性を失うのか？ | 進捗をディスクに永続化し、前回の続きから再開する |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | なぜ初期化に独自のフェーズが必要なのか？ | エージェントが作業を開始する前に環境が健全であることを確認する |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | なぜエージェントは過剰に手を出し、不足して終わるのか？ | 一度に一つの機能、明確な完了の定義 |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | なぜ機能リストはハーネスのプリミティブなのか？ | エージェントが無視できない機械可読なスコープ境界 |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | なぜエージェントは早すぎる完了を宣言するのか？ | 検証のギャップ：確信 ≠ 正確性 |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | なぜエンドツーエンドテストが結果を変えるのか？ | 完全なパイプライン実行のみが本当の検証として認められる |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | なぜオブザーバビリティはハーネス内にあるべきなのか？ | エージェントが何をしたか見えなければ、何を壊したか修正できない |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | なぜすべてのセッションがクリーンな状態を残さなければならないのか？ | 次のセッションの成功は、このセッションのクリーンアップに依存する |
 
 ### プロジェクト — レクチャーの手法を同じ Electron アプリに適用する6つのハンズオンプロジェクト
 
 | プロジェクト | やること | ハーネスメカニズム |
 |---------|------------|-------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | 同じタスクを2回実行：プロンプトのみ vs. ルール優先 | 最小ハーネス：AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | エージェントが読めるようにリポジトリを再構築する | エージェント可読ワークスペース + 永続状態ファイル |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | エージェントが前回の続きから再開できるようにする | 進捗ログ + セションハンドオフ + マルチセッション連続性 |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | エージェントがやりすぎたり、やらなすぎたりするのを防ぐ | ランタイムフィードバック + スコープ制御 + インクリメンタルインデキシング |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | エージェントが自分の作業を検証するようにする | 自己検証 + グラウンデッドQ&A + 証拠ベースの完了 |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | ゼロから完全なハーネスを構築する（カプロジェクト） | フルハーネス：全メカニズム + オブザーバビリティ + アブレーションスタディ |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | 同じタスクを2回実行：プロンプトのみ vs. ルール優先 | 最小ハーネス：AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | エージェントが読めるようにリポジトリを再構築する | エージェント可読ワークスペース + 永続状態ファイル |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | エージェントが前回の続きから再開できるようにする | 進捗ログ + セションハンドオフ + マルチセッション連続性 |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | エージェントがやりすぎたり、やらなすぎたりするのを防ぐ | ランタイムフィードバック + スコープ制御 + インクリメンタルインデキシング |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | エージェントが自分の作業を検証するようにする | 自己検証 + グラウンデッドQ&A + 証拠ベースの完了 |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | ゼロから完全なハーネスを構築する（カプロジェクト） | フルハーネス：全メカニズム + オブザーバビリティ + アブレーションスタディ |
 
 ```text
     プロジェクトの進化

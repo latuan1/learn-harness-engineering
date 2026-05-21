@@ -325,29 +325,29 @@ Harness состоит из пяти подсистем:
 
 | Занятие | Вопрос | Ключевая идея |
 |---------|--------|---------------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Почему сильные модели всё равно ошибаются на реальных задачах? | Разрыв между бенчмарками и реальным инжинирингом |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | Что на самом деле означает «harness"? | Пять подсистем: Instructions, State, Verification, Scope, Lifecycle |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Почему репозиторий должен быть единственным источником истины? | Если агент не может это увидеть — этого не существует |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Почему одна гигантская инструкция обречена на провал? | Прогрессивное раскрытие: дать карту, а не энциклопедию |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Почему длительные задачи теряют связность? | Сохранять прогресс на диске; продолжать с того места, где остановились |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Почему инициализация требует отдельной фазы? | Проверить работоспособность окружения до того, как агент начнёт работу |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Почему агенты выходят за рамки и не доделывают? | Одна фича за раз; явное определение «готово" |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Почему feature-списки — это примитивы harness? | Машинно-читаемые границы scope, которые агент не может проигнорировать |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Почему агенты объявляют успех слишком рано? | Пробелы в верификации: доверие ≠ корректность |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Почему end-to-end-тестирование меняет результаты? | Только полный прогон pipeline считается настоящей верификацией |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Почему observability должна быть внутри harness? | Если вы не видите, что сделал агент, вы не сможете починить то, что он сломал |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Почему каждая сессия должна оставлять чистое состояние? | Успех следующей сессии зависит от уборки в этой |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Почему сильные модели всё равно ошибаются на реальных задачах? | Разрыв между бенчмарками и реальным инжинирингом |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | Что на самом деле означает «harness"? | Пять подсистем: Instructions, State, Verification, Scope, Lifecycle |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Почему репозиторий должен быть единственным источником истины? | Если агент не может это увидеть — этого не существует |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Почему одна гигантская инструкция обречена на провал? | Прогрессивное раскрытие: дать карту, а не энциклопедию |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Почему длительные задачи теряют связность? | Сохранять прогресс на диске; продолжать с того места, где остановились |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Почему инициализация требует отдельной фазы? | Проверить работоспособность окружения до того, как агент начнёт работу |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Почему агенты выходят за рамки и не доделывают? | Одна фича за раз; явное определение «готово" |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Почему feature-списки — это примитивы harness? | Машинно-читаемые границы scope, которые агент не может проигнорировать |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Почему агенты объявляют успех слишком рано? | Пробелы в верификации: доверие ≠ корректность |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Почему end-to-end-тестирование меняет результаты? | Только полный прогон pipeline считается настоящей верификацией |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Почему observability должна быть внутри harness? | Если вы не видите, что сделал агент, вы не сможете починить то, что он сломал |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Почему каждая сессия должна оставлять чистое состояние? | Успех следующей сессии зависит от уборки в этой |
 
 ### Проекты — 6 практических проектов, применяющих методы лекций к одному и тому же Electron-приложению
 
 | Проект | Что вы делаете | Механизм harness |
 |---------|----------------|-------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | Выполнить одну задачу дважды: только промпт vs. на основе правил | Минимальный harness: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | Реструктурировать репозиторий для чтения агентом | Агентно-читаемое рабочее пространство + постоянные файлы состояния |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | Позволить агенту продолжить с того места, где он остановился | Протокол прогресса + передача сессии + мультисессионная связность |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | Не дать агенту сделать слишком много или слишком мало | Runtime-обратная связь + контроль scope + инкрементальное индексирование |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | Заставить агента верифицировать собственную работу | Самоверификация + обоснованный Q&A + завершение на основе свидетельств |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | Построить полный harness с нуля (итоговый проект) | Полный harness: все механизмы + observability + абляционное исследование |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | Выполнить одну задачу дважды: только промпт vs. на основе правил | Минимальный harness: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | Реструктурировать репозиторий для чтения агентом | Агентно-читаемое рабочее пространство + постоянные файлы состояния |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | Позволить агенту продолжить с того места, где он остановился | Протокол прогресса + передача сессии + мультисессионная связность |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | Не дать агенту сделать слишком много или слишком мало | Runtime-обратная связь + контроль scope + инкрементальное индексирование |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | Заставить агента верифицировать собственную работу | Самоверификация + обоснованный Q&A + завершение на основе свидетельств |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Построить полный harness с нуля (итоговый проект) | Полный harness: все механизмы + observability + абляционное исследование |
 
 ```text
     ЭВОЛЮЦИЯ ПРОЕКТОВ

@@ -78,9 +78,9 @@ Python 3.11 FastAPI 后端，PostgreSQL 15 数据库。
 - 所有 PR 必须通过 pytest + mypy --strict + ruff check
 
 ## 专题文档
-- [API 设计规范](docs/api-patterns.md) — 添加新端点时必读
-- [数据库操作约束](docs/database-rules.md) — 涉及数据库修改时必读
-- [测试标准](docs/testing-standards.md) — 编写测试时参考
+- API 设计规范 (`docs/api-patterns.md`) — 添加新端点时必读
+- 数据库操作约束 (`docs/database-rules.md`) — 涉及数据库修改时必读
+- 测试标准 (`docs/testing-standards.md`) — 编写测试时参考
 ```
 
 每个专题文档 50-150 行，按主题放在 `docs/` 目录下或对应模块目录旁。Agent 只在需要时才去读。就像行李箱里的收纳袋——内衣一个袋，洗漱一个袋，充电器一个袋。找东西不用翻整个箱子。

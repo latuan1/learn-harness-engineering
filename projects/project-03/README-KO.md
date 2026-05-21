@@ -34,5 +34,5 @@ npm install
 
 ## 관련 강의
 
-- [강의 05: 세션 간 컨텍스트를 유지하는 방법](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md)
-- [강의 06: 모든 에이전트 세션 전에 초기화가 필요한 이유](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md)
+- [강의 05: 세션 간 컨텍스트를 유지하는 방법](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md)
+- [강의 06: 모든 에이전트 세션 전에 초기화가 필요한 이유](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md)

@@ -316,29 +316,29 @@
 
 | الجلسة | السؤال | الفكرة الأساسية |
 |---------|--------|-----------------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | لماذا تفشل النماذج القوية في المهام الحقيقية؟ | الفجوة في القدرة بين المعايير القياسية والهندسة الحقيقية |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | ماذا يعني "الحزام" فعلياً؟ | خمسة أنظمة فرعية: التعليمات، الحالة، التحقق، النطاق، دورة الحياة |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | لماذا يجب أن يكون المستودع هو المصدر الوحيد للحقيقة؟ | إذا لم يستطع الوكيل رؤيته، فهو غير موجود |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | لماذا يفشل ملف التعليمات الضخم الواحد؟ | الإفصاح التدريجي: أعط خريطة، لا موسوعة |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | لماذا تفقد المهام طويلة التشغيل الاستمرارية؟ | احفظ التقدم على القرص؛ التقط من حيث توقفت |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | لماذا تحتاج التهيئة إلى مرحلة خاصة بها؟ | تحقق من صحة البيئة قبل أن يبدأ الوكيل العمل |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | لماذا يتجاوز الوكلاء الحدود وينهون أعمالاً بشكل ناقص؟ | ميزة واحدة في كل مرة؛ تعريف صريح للإتمام |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | لماذا تُعد قوائم الميزات عناصر أساسية للحزام؟ | حدود نطاق قابلة للقراءة آلياً لا يمكن للوكيل تجاهلها |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | لماذا يعلن الوكلاء النصر مبكراً جداً؟ | فجوات التحقق: الثقة ≠ الصحة |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | لماذا يغيّر الاختبار من طرف إلى طرف النتائج؟ | تشغيل خط أنابيب كامل فقط يُحسب كتحقق حقيقي |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | لماذا تنتمي قابلية الملاحظة داخل الحزام؟ | إذا لم تستطع رؤية ما فعله الوكيل، لا يمكنك إصلاح ما أفسده |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | لماذا يجب أن تترك كل جلسة حالة نظيفة؟ | نجاح الجلسة التالية يعتمد على تنظيف هذه الجلسة |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | لماذا تفشل النماذج القوية في المهام الحقيقية؟ | الفجوة في القدرة بين المعايير القياسية والهندسة الحقيقية |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | ماذا يعني "الحزام" فعلياً؟ | خمسة أنظمة فرعية: التعليمات، الحالة، التحقق، النطاق، دورة الحياة |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | لماذا يجب أن يكون المستودع هو المصدر الوحيد للحقيقة؟ | إذا لم يستطع الوكيل رؤيته، فهو غير موجود |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | لماذا يفشل ملف التعليمات الضخم الواحد؟ | الإفصاح التدريجي: أعط خريطة، لا موسوعة |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | لماذا تفقد المهام طويلة التشغيل الاستمرارية؟ | احفظ التقدم على القرص؛ التقط من حيث توقفت |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | لماذا تحتاج التهيئة إلى مرحلة خاصة بها؟ | تحقق من صحة البيئة قبل أن يبدأ الوكيل العمل |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | لماذا يتجاوز الوكلاء الحدود وينهون أعمالاً بشكل ناقص؟ | ميزة واحدة في كل مرة؛ تعريف صريح للإتمام |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | لماذا تُعد قوائم الميزات عناصر أساسية للحزام؟ | حدود نطاق قابلة للقراءة آلياً لا يمكن للوكيل تجاهلها |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | لماذا يعلن الوكلاء النصر مبكراً جداً؟ | فجوات التحقق: الثقة ≠ الصحة |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | لماذا يغيّر الاختبار من طرف إلى طرف النتائج؟ | تشغيل خط أنابيب كامل فقط يُحسب كتحقق حقيقي |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | لماذا تنتمي قابلية الملاحظة داخل الحزام؟ | إذا لم تستطع رؤية ما فعله الوكيل، لا يمكنك إصلاح ما أفسده |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | لماذا يجب أن تترك كل جلسة حالة نظيفة؟ | نجاح الجلسة التالية يعتمد على تنظيف هذه الجلسة |
 
 ### المشاريع — 6 مشاريع عملية تطبق طرق المحاضرات على نفس تطبيق Electron
 
 | المشروع | ماذا تفعل | آلية الحزام |
 |---------|-----------|-------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | شغّل نفس المهمة مرتين: بالموجهات فقط مقابل القواعد أولاً | حزام أدنى: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | أعد هيكلة المستودع ليتمكن الوكيل من قراءته | مساحة عمل قابلة للقراءة بواسطة الوكيل + ملفات حالة مستمرة |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | اجعل الوكيل يلتقط من حيث توقف | سجل التقدم + تسليم الجلسة + استمرارية متعددة الجلسات |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | أوقف الوكيل عن القيام بالكثير جداً أو القليل جداً | ملاحظات وقت التشغيل + التحكم في النطاق + الفهرسة التدريجية |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | اجعل الوكيل يتحقق من عمله بنفسه | التحقق الذاتي + أسئلة وأجوبة مبنية على أدلة + إكمال قائم على الأدلة |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | ابنِ حزاماً كاملاً من الصفر (مشروع التخرج) | حزام كامل: جميع الآليات + قابلية الملاحظة + دراسة الاستئصال |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | شغّل نفس المهمة مرتين: بالموجهات فقط مقابل القواعد أولاً | حزام أدنى: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | أعد هيكلة المستودع ليتمكن الوكيل من قراءته | مساحة عمل قابلة للقراءة بواسطة الوكيل + ملفات حالة مستمرة |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | اجعل الوكيل يلتقط من حيث توقف | سجل التقدم + تسليم الجلسة + استمرارية متعددة الجلسات |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | أوقف الوكيل عن القيام بالكثير جداً أو القليل جداً | ملاحظات وقت التشغيل + التحكم في النطاق + الفهرسة التدريجية |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | اجعل الوكيل يتحقق من عمله بنفسه | التحقق الذاتي + أسئلة وأجوبة مبنية على أدلة + إكمال قائم على الأدلة |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | ابنِ حزاماً كاملاً من الصفر (مشروع التخرج) | حزام كامل: جميع الآليات + قابلية الملاحظة + دراسة الاستئصال |
 
 ```text
     تطور المشاريع

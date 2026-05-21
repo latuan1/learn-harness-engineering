@@ -78,9 +78,9 @@ Python 3.11 FastAPI backend, PostgreSQL 15 maʼlumotlar bazasi.
 - Barcha PRʼlar pytest + mypy --strict + ruff check dan oʻtishi shart
 
 ## Mavzuli hujjatlar
-- [API dizayn andozalari](docs/api-patterns.md) — Endpointʼlar qoʻshganda oʻqish majburiy
-- [Maʼlumotlar bazasi qoidalari](docs/database-rules.md) — Maʼlumotlar bazasi amallarini oʻzgartirganda kerak boʻladi
-- [Testlash standartlari](docs/testing-standards.md) — Test yozish uchun qoʻllanma
+- API dizayn andozalari (`docs/api-patterns.md`) — Endpointʼlar qoʻshganda oʻqish majburiy
+- Maʼlumotlar bazasi qoidalari (`docs/database-rules.md`) — Maʼlumotlar bazasi amallarini oʻzgartirganda kerak boʻladi
+- Testlash standartlari (`docs/testing-standards.md`) — Test yozish uchun qoʻllanma
 ```
 
 Har bir mavzu hujjati `docs/` katalogida yoki tegishli modulning yonida mavzu boʻyicha tashkillashtirilgan holda 50-150 qatordan iborat boʻladi. Agent ularni faqat kerak boʻlganda oʻqiydi. Xuddi chamadondagi taqsimlagichlar (packing cubes) kabi — ichki kiyimlar bir boʻlimda, yuvinish vositalari ikkinchisida, quvvatlagichlar uchinchisida. Biror narsani qidirib topish uchun butun sumkani boʻshatish shart emas.

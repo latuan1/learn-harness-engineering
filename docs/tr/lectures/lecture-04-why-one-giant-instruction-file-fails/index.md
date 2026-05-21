@@ -78,9 +78,9 @@ Python 3.11 FastAPI backend, PostgreSQL 15 veritabanı.
 - Tüm PR'lar pytest + mypy --strict + ruff check'i geçmeli
 
 ## Konu Dokümanları
-- [API Tasarım Kalıpları](docs/api-patterns.md) — Uç nokta eklerken okunması zorunlu
-- [Veritabanı Kuralları](docs/database-rules.md) — Veritabanı işlemleri değiştirilirken zorunlu
-- [Test Standartları](docs/testing-standards.md) — Test yazarken referans
+- API Tasarım Kalıpları (`docs/api-patterns.md`) — Uç nokta eklerken okunması zorunlu
+- Veritabanı Kuralları (`docs/database-rules.md`) — Veritabanı işlemleri değiştirilirken zorunlu
+- Test Standartları (`docs/testing-standards.md`) — Test yazarken referans
 ```
 
 Her konu dokümanı 50-150 satırdır, `docs/` dizininde veya ilgili modülün yanında konuya göre organize edilmiştir. Ajan bunları yalnızca gerektiğinde okur. Bavuldaki paket küpleri gibi — bir küpte iç çamaşırı, diğerinde tuvalet malzemeleri, üçüncüsünde şarj cihazları. Bir şey bulmak tüm çantayı boşaltmayı gerektirmez.

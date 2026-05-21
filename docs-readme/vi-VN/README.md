@@ -316,29 +316,29 @@ Mỗi giai đoạn mất khoảng một tuần nếu bạn học bán thời gia
 
 | Phiên | Câu hỏi | Ý tưởng cốt lõi |
 |-------|---------|------------------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Tại sao các mô hình mạnh vẫn thất bại trên tác vụ thực tế? | Khoảng cách năng lực giữa benchmark và kỹ thuật thực tế |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | "Harness" thực sự có nghĩa là gì? | Năm hệ thống con: instructions, state, verification, scope, lifecycle |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Tại sao kho mã phải là nguồn chân lý duy nhất? | Nếu agent không thể thấy nó, nó không tồn tại |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Tại sao một tệp hướng dẫn khổng lồ lại thất bại? | Tiết lộ dần: cho một bản đồ, không phải một bộ bách khoa toàn thư |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Tại sao các tác vụ chạy dài mất tính liên tục? | Lưu trữ tiến trình vào đĩa; tiếp tục từ nơi bạn đã dừng |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Tại sao khởi tạo cần một giai đoạn riêng? | Xác minh môi trường khỏe mạnh trước khi agent bắt đầu làm việc |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Tại sao agent lại vượt quá phạm vi và không hoàn thành? | Một tính năng tại một thời điểm; định nghĩa rõ ràng về "hoàn thành" |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Tại sao danh sách tính năng là nguyên thủy của harness? | Ranh giới phạm vi có thể đọc bởi máy mà agent không thể bỏ qua |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Tại sao agent tuyên bố hoàn thành quá sớm? | Khoảng trống kiểm chứng: sự tự tin ≠ sự chính xác |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Tại sao kiểm thử đầu-cuối lại thay đổi kết quả? | Chỉ một lần chạy toàn bộ pipeline mới được tính là kiểm chứng thực sự |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Tại sao khả năng quan sát thuộc về bên trong harness? | Nếu bạn không thể thấy agent đã làm gì, bạn không thể sửa những gì nó đã làm hỏng |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Tại sao mỗi phiên phải để lại trạng thái sạch? | Sự thành công của phiên tiếp theo phụ thuộc vào việc dọn dẹp của phiên này |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Tại sao các mô hình mạnh vẫn thất bại trên tác vụ thực tế? | Khoảng cách năng lực giữa benchmark và kỹ thuật thực tế |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | "Harness" thực sự có nghĩa là gì? | Năm hệ thống con: instructions, state, verification, scope, lifecycle |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Tại sao kho mã phải là nguồn chân lý duy nhất? | Nếu agent không thể thấy nó, nó không tồn tại |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Tại sao một tệp hướng dẫn khổng lồ lại thất bại? | Tiết lộ dần: cho một bản đồ, không phải một bộ bách khoa toàn thư |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Tại sao các tác vụ chạy dài mất tính liên tục? | Lưu trữ tiến trình vào đĩa; tiếp tục từ nơi bạn đã dừng |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Tại sao khởi tạo cần một giai đoạn riêng? | Xác minh môi trường khỏe mạnh trước khi agent bắt đầu làm việc |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Tại sao agent lại vượt quá phạm vi và không hoàn thành? | Một tính năng tại một thời điểm; định nghĩa rõ ràng về "hoàn thành" |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Tại sao danh sách tính năng là nguyên thủy của harness? | Ranh giới phạm vi có thể đọc bởi máy mà agent không thể bỏ qua |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Tại sao agent tuyên bố hoàn thành quá sớm? | Khoảng trống kiểm chứng: sự tự tin ≠ sự chính xác |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Tại sao kiểm thử đầu-cuối lại thay đổi kết quả? | Chỉ một lần chạy toàn bộ pipeline mới được tính là kiểm chứng thực sự |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Tại sao khả năng quan sát thuộc về bên trong harness? | Nếu bạn không thể thấy agent đã làm gì, bạn không thể sửa những gì nó đã làm hỏng |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Tại sao mỗi phiên phải để lại trạng thái sạch? | Sự thành công của phiên tiếp theo phụ thuộc vào việc dọn dẹp của phiên này |
 
 ### Dự án — 6 dự án thực hành áp dụng phương pháp bài giảng vào cùng ứng dụng Electron
 
 | Dự án | Những gì bạn làm | Cơ chế Harness |
 |-------|-------------------|----------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | Chạy cùng tác vụ hai lần: chỉ dùng prompt vs. ưu tiên quy tắc | Harness tối thiểu: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | Tái cấu trúc kho mã để agent có thể đọc được | Không gian làm việc agent có thể đọc + các tệp trạng thái liên tục |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | Khiến agent tiếp tục từ nơi nó đã dừng | Nhật ký tiến trình + bàn giao phiên + tính liên tục đa phiên |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | Ngăn agent làm quá nhiều hoặc quá ít | Phản hồi thời gian chạy + kiểm soát phạm vi + lập chỉ mục gia tăng |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | Khiến agent tự kiểm chứng công việc của mình | Tự kiểm chứng + Q&A có căn cứ + hoàn thành dựa trên bằng chứng |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | Xây dựng một harness hoàn chỉnh từ đầu (tổng kết) | Harness đầy đủ: tất cả cơ chế + khả năng quan sát + nghiên cứu ablation |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | Chạy cùng tác vụ hai lần: chỉ dùng prompt vs. ưu tiên quy tắc | Harness tối thiểu: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | Tái cấu trúc kho mã để agent có thể đọc được | Không gian làm việc agent có thể đọc + các tệp trạng thái liên tục |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | Khiến agent tiếp tục từ nơi nó đã dừng | Nhật ký tiến trình + bàn giao phiên + tính liên tục đa phiên |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | Ngăn agent làm quá nhiều hoặc quá ít | Phản hồi thời gian chạy + kiểm soát phạm vi + lập chỉ mục gia tăng |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | Khiến agent tự kiểm chứng công việc của mình | Tự kiểm chứng + Q&A có căn cứ + hoàn thành dựa trên bằng chứng |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Xây dựng một harness hoàn chỉnh từ đầu (tổng kết) | Harness đầy đủ: tất cả cơ chế + khả năng quan sát + nghiên cứu ablation |
 
 ```text
     SỰ PHÁT TRIỂN DỰ ÁN

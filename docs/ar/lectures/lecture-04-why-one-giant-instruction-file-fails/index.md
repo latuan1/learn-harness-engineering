@@ -78,9 +78,9 @@ Python 3.11 FastAPI backend, PostgreSQL 15 database.
 - All PRs must pass pytest + mypy --strict + ruff check
 
 ## Topic Docs
-- [API Design Patterns](docs/api-patterns.md) — Required reading when adding endpoints
-- [Database Rules](docs/database-rules.md) — Required when modifying database operations
-- [Testing Standards](docs/testing-standards.md) — Reference when writing tests
+- API Design Patterns (`docs/api-patterns.md`) — Required reading when adding endpoints
+- Database Rules (`docs/database-rules.md`) — Required when modifying database operations
+- Testing Standards (`docs/testing-standards.md`) — Reference when writing tests
 ```
 
 كل مستند موضوعي يكون بين 50 و150 سطرًا، منظمًا حسب الموضوع داخل `docs/` أو بجانب الوحدة المقابلة. يقرأه الوكيل فقط عند الحاجة. مثل مكعبات التنظيم داخل حقيبة السفر: الملابس في مكعب، أدوات العناية في آخر، الشواحن في ثالث. العثور على شيء لا يتطلب إفراغ الحقيبة كلها.

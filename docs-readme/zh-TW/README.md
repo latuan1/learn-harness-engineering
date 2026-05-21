@@ -309,29 +309,29 @@ Harness Engineering 是關於在模型周圍建構一個完整的工作環境，
 
 | 場次 | 問題 | 核心概念 |
 |---------|----------|-----------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | 為什麼強大的模型在真實任務上仍然會失敗？ | 基準測試與真實工程之間的能力差距 |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | 「harness」到底是什麼意思？ | 五個子系統：指令、狀態、驗證、範圍、生命週期 |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | 為什麼儲存庫必須是唯一的真實來源？ | 如果代理看不到它，它就不存在 |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | 為什麼一個巨大的指令檔案會失敗？ | 漸進揭露：給一張地圖，不是一本百科全書 |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | 為什麼長時間執行的任務會失去連續性？ | 將進度持久化到磁碟；從你停止的地方接續 |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | 為什麼初始化需要自己的階段？ | 在代理開始工作之前驗證環境是否健康 |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | 為什麼代理會過度延伸和過早結束？ | 每次一個功能；明確的完成定義 |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | 為什麼功能列表是 harness 的基本元素？ | 機器可讀的範圍邊界，代理無法忽略 |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | 為什麼代理會過早宣告勝利？ | 驗證缺口：信心不等於正確 |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 為什麼端到端測試能改變結果？ | 只有完整的流程執行才算真正的驗證 |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 為什麼可觀測性應該屬於 harness 內部？ | 如果你看不到代理做了什麼，你就無法修復它破壞的東西 |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 為什麼每個工作階段都必須留下乾淨的狀態？ | 下一個工作階段的成功取決於這個工作階段的清理 |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | 為什麼強大的模型在真實任務上仍然會失敗？ | 基準測試與真實工程之間的能力差距 |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | 「harness」到底是什麼意思？ | 五個子系統：指令、狀態、驗證、範圍、生命週期 |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | 為什麼儲存庫必須是唯一的真實來源？ | 如果代理看不到它，它就不存在 |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | 為什麼一個巨大的指令檔案會失敗？ | 漸進揭露：給一張地圖，不是一本百科全書 |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | 為什麼長時間執行的任務會失去連續性？ | 將進度持久化到磁碟；從你停止的地方接續 |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | 為什麼初始化需要自己的階段？ | 在代理開始工作之前驗證環境是否健康 |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | 為什麼代理會過度延伸和過早結束？ | 每次一個功能；明確的完成定義 |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | 為什麼功能列表是 harness 的基本元素？ | 機器可讀的範圍邊界，代理無法忽略 |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | 為什麼代理會過早宣告勝利？ | 驗證缺口：信心不等於正確 |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 為什麼端到端測試能改變結果？ | 只有完整的流程執行才算真正的驗證 |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 為什麼可觀測性應該屬於 harness 內部？ | 如果你看不到代理做了什麼，你就無法修復它破壞的東西 |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 為什麼每個工作階段都必須留下乾淨的狀態？ | 下一個工作階段的成功取決於這個工作階段的清理 |
 
 ### 專案 — 6 個動手專案，將講座方法應用於同一個 Electron 應用程式
 
 | 專案 | 你要做什麼 | Harness 機制 |
 |---------|------------|-------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | 將同一任務執行兩次：僅提示 vs. 規則優先 | 最小 harness：AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | 重構儲存庫，讓代理能夠閱讀它 | 代理可讀的工作空間 + 持久化狀態檔案 |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | 讓代理從上次停止的地方接續 | 進度日誌 + 工作階段交接 + 多工作階段連續性 |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | 阻止代理做得太多或太少 | 執行時回饋 + 範圍控制 + 增量索引 |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | 讓代理驗證自己的工作 | 自我驗證 + 有依據的問答 + 基於證據的完成 |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | 從零建構一個完整的 harness（畢業專案） | 完整 harness：所有機制 + 可觀測性 + 消融實驗 |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | 將同一任務執行兩次：僅提示 vs. 規則優先 | 最小 harness：AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | 重構儲存庫，讓代理能夠閱讀它 | 代理可讀的工作空間 + 持久化狀態檔案 |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | 讓代理從上次停止的地方接續 | 進度日誌 + 工作階段交接 + 多工作階段連續性 |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | 阻止代理做得太多或太少 | 執行時回饋 + 範圍控制 + 增量索引 |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | 讓代理驗證自己的工作 | 自我驗證 + 有依據的問答 + 基於證據的完成 |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | 從零建構一個完整的 harness（畢業專案） | 完整 harness：所有機制 + 可觀測性 + 消融實驗 |
 
 ```text
     專案演進

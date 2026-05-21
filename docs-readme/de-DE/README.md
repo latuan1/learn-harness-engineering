@@ -315,29 +315,29 @@ Jede Phase dauert etwa eine Woche, wenn Sie nebenbei lernen. Wenn Sie schneller 
 
 | Session | Frage | Kernidee |
 |---------|-------|----------|
-| [L01](../../docs/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Warum scheitern starke Modelle dennoch bei echten Aufgaben? | Die Lücke zwischen Benchmarks und echtem Engineering |
-| [L02](../../docs/lectures/lecture-02-what-a-harness-actually-is/index.md) | Was bedeutet „Harness" eigentlich? | Fünf Subsysteme: Instructions, State, Verification, Scope, Lifecycle |
-| [L03](../../docs/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Warum muss das Repo die einzige Quelle der Wahrheit sein? | Wenn der Agent es nicht sehen kann, existiert es nicht |
-| [L04](../../docs/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Warum scheitert eine einzige riesige Instruktionsdatei? | Progressive Enthüllung: eine Karte geben, keine Enzyklopädie |
-| [L05](../../docs/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Warum verlieren langlaufende Aufgaben ihre Kontinuität? | Fortschritt auf der Festplatte speichern; dort fortfahren, wo man aufgehört hat |
-| [L06](../../docs/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Warum braucht die Initialisierung eine eigene Phase? | Die Umgebung auf Funktionsfähigkeit prüfen, bevor der Agent mit der Arbeit beginnt |
-| [L07](../../docs/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Warum greifen Agenten über und schließen unvollständig ab? | Ein Feature gleichzeitig; explizite Definition von „Fertig" |
-| [L08](../../docs/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Warum sind Feature-Listen Harness-Primitiven? | Maschinenlesbare Scope-Grenzen, die der Agent nicht ignorieren kann |
-| [L09](../../docs/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Warum melden Agenten zu früh den Erfolg? | Verifizierungslücken: Vertrauen ≠ Korrektheit |
-| [L10](../../docs/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Warum ändert End-to-End-Testing die Ergebnisse? | Nur ein vollständiger Pipeline-Lauf gilt als echte Verifizierung |
-| [L11](../../docs/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Warum gehört Observability in das Harness? | Wenn Sie nicht sehen können, was der Agent getan hat, können Sie nicht reparieren, was er zerstört hat |
-| [L12](../../docs/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Warum muss jede Session einen sauberen Zustand hinterlassen? | Der Erfolg der nächsten Session hängt vom Aufräumen dieser Session ab |
+| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | Warum scheitern starke Modelle dennoch bei echten Aufgaben? | Die Lücke zwischen Benchmarks und echtem Engineering |
+| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | Was bedeutet „Harness" eigentlich? | Fünf Subsysteme: Instructions, State, Verification, Scope, Lifecycle |
+| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | Warum muss das Repo die einzige Quelle der Wahrheit sein? | Wenn der Agent es nicht sehen kann, existiert es nicht |
+| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | Warum scheitert eine einzige riesige Instruktionsdatei? | Progressive Enthüllung: eine Karte geben, keine Enzyklopädie |
+| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | Warum verlieren langlaufende Aufgaben ihre Kontinuität? | Fortschritt auf der Festplatte speichern; dort fortfahren, wo man aufgehört hat |
+| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | Warum braucht die Initialisierung eine eigene Phase? | Die Umgebung auf Funktionsfähigkeit prüfen, bevor der Agent mit der Arbeit beginnt |
+| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | Warum greifen Agenten über und schließen unvollständig ab? | Ein Feature gleichzeitig; explizite Definition von „Fertig" |
+| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | Warum sind Feature-Listen Harness-Primitiven? | Maschinenlesbare Scope-Grenzen, die der Agent nicht ignorieren kann |
+| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | Warum melden Agenten zu früh den Erfolg? | Verifizierungslücken: Vertrauen ≠ Korrektheit |
+| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | Warum ändert End-to-End-Testing die Ergebnisse? | Nur ein vollständiger Pipeline-Lauf gilt als echte Verifizierung |
+| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Warum gehört Observability in das Harness? | Wenn Sie nicht sehen können, was der Agent getan hat, können Sie nicht reparieren, was er zerstört hat |
+| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Warum muss jede Session einen sauberen Zustand hinterlassen? | Der Erfolg der nächsten Session hängt vom Aufräumen dieser Session ab |
 
 ### Projekte — 6 praktische Projekte, die Vorlesungsmethoden auf dieselbe Electron-App anwenden
 
 | Projekt | Was Sie tun | Harness-Mechanismus |
 |---------|-------------|---------------------|
-| [P01](../../docs/projects/project-01-baseline-vs-minimal-harness/index.md) | Dieselbe Aufgabe zweimal ausführen: nur Prompt vs. regelnbasiert | Minimales Harness: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/projects/project-02-agent-readable-workspace/index.md) | Das Repo umstrukturieren, damit der Agent es lesen kann | Agentenlesbarer Arbeitsbereich + persistente Zustandsdateien |
-| [P03](../../docs/projects/project-03-multi-session-continuity/index.md) | Den Agenten dort fortfahren lassen, wo er aufgehört hat | Fortschrittsprotokoll + Session-Übergabe + Multi-Session-Kontinuität |
-| [P04](../../docs/projects/project-04-incremental-indexing/index.md) | Den Agenten davon abhalten, zu viel oder zu wenig zu tun | Laufzeit-Feedback + Scope-Kontrolle + inkrementelle Indizierung |
-| [P05](../../docs/projects/project-05-grounded-qa-verification/index.md) | Den Agenten seine eigene Arbeit verifizieren lassen | Selbstverifizierung + fundierte Q&A + evidenzbasierter Abschluss |
-| [P06](../../docs/projects/project-06-runtime-observability-and-debugging/index.md) | Ein vollständiges Harness von Grund auf neu aufbauen (Abschlussprojekt) | Vollständiges Harness: alle Mechanismen + Observability + Ablationsstudie |
+| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | Dieselbe Aufgabe zweimal ausführen: nur Prompt vs. regelnbasiert | Minimales Harness: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | Das Repo umstrukturieren, damit der Agent es lesen kann | Agentenlesbarer Arbeitsbereich + persistente Zustandsdateien |
+| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | Den Agenten dort fortfahren lassen, wo er aufgehört hat | Fortschrittsprotokoll + Session-Übergabe + Multi-Session-Kontinuität |
+| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | Den Agenten davon abhalten, zu viel oder zu wenig zu tun | Laufzeit-Feedback + Scope-Kontrolle + inkrementelle Indizierung |
+| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | Den Agenten seine eigene Arbeit verifizieren lassen | Selbstverifizierung + fundierte Q&A + evidenzbasierter Abschluss |
+| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Ein vollständiges Harness von Grund auf neu aufbauen (Abschlussprojekt) | Vollständiges Harness: alle Mechanismen + Observability + Ablationsstudie |
 
 ```text
     PROJEKTENTWICKLUNG
