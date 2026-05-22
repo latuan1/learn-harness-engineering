@@ -33,10 +33,10 @@ Learn Harness Engineering est un cours dédié à l'ingénierie des agents de co
 
 - [Aperçu Visuel](#aperçu-visuel)
 - [Ce que signifie réellement Harness Engineering](#ce-que-signifie-réellement-harness-engineering)
-- [Démarrage Rapide : Améliorez votre agent dès aujourd'hui](#démarrage-rapide--améliorez-votre-agent-dès-aujourdhui)
-- [Projet Final : Une véritable application](#projet-final--une-véritable-application)
-- [Parcours d'Apprentissage](#parcours-dapprentissage)
-- [Programme d'Études](#programme-détudes)
+- [Démarrage Rapide : Améliorez votre agent dès aujourd'hui](#démarrage-rapide-améliorez-votre-agent-dès-aujourd-hui)
+- [Projet Final : Une véritable application](#projet-final-une-véritable-application)
+- [Parcours d'Apprentissage](#parcours-d-apprentissage)
+- [Programme d'Études](#programme-d-études)
 - [Skills](#skills)
 - [Autres Cours](#autres-cours)
 

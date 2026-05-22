@@ -31,13 +31,13 @@ Learn Harness Engineering — KI kod yozuvchi agentlarini ishlab chiqishga bagʻ
 
 ## Mundarija
 
-- [Vizual oldindan koʻrish](#vizual-oldindan-ko%C5%A1ish)
+- [Vizual oldindan koʻrish](#vizual-oldindan-koʻrish)
 - [Harness Engineering nima degani](#harness-engineering-nima-degani)
 - [Tezkor boshlash: Agentingizni bugunoq yaxshilang](#tezkor-boshlash-agentingizni-bugunoq-yaxshilang)
 - [Yakuniy loyiha: Haqiqiy ilova](#yakuniy-loyiha-haqiqiy-ilova)
-- [Oʻqish yoʻli](#o%C5%9Eqish-yo%C5%A7li)
-- [Oʻquv dasturi](#o%C5%9Equv-dasturi)
-- [Skillʼlar](#skilllar)
+- [Oʻqish yoʻli](#oʻqish-yoʻli)
+- [Oʻquv dasturi](#oʻquv-dasturi)
+- [Skillʼlar](#skillʼlar)
 - [Boshqa kurslar](#boshqa-kurslar)
 
 ---
