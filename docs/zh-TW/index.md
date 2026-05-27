@@ -1,6 +1,6 @@
 # 歡迎來到 Learn Harness Engineering
 
-Learn Harness Engineering 是一門專注於 AI 程式設計代理工程實踐的課程。本課程深入研究並整理業界前沿的 Harness Engineering（執行環境工程）理論與實踐，參考資料包括：
+Learn Harness Engineering 是一門專注於 AI 程式設計代理工程實踐的課程。本課程深入研究並整理業界前沿的 Harness Engineering（駕馭工程）理論與實踐，參考資料包括：
 - [OpenAI: Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
 - [Anthropic: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [Anthropic: Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
