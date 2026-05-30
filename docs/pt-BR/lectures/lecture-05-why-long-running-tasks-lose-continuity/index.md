@@ -21,148 +21,145 @@ A Anthropic observou algo interessante em suas pesquisas sobre agentes de longa 
 
 Sem arquivos de persistência de estado, toda nova sessão precisa começar do zero:
 
-
 ```mermaid
 flowchart LR
-    S1["Session 1<br/>feature is half done"] --> End1["Context is nearly full<br/>session ends"]
-    End1 --> S2["Session 2 starts fresh"]
-    S2 --> Guess["Re-read folders, rerun tests,<br/>guess why the code was written this way"]
-    Guess --> Drift["Work gets repeated<br/>and recovery is slow"]
+    S1["Sessão 1<br/>funcionalidade parcialmente concluída"] --> End1["Contexto quase esgotado<br/>sessão encerrada"]
+    End1 --> S2["Sessão 2 inicia do zero"]
+    S2 --> Guess["Relê pastas, executa testes novamente<br/>e tenta descobrir por que o código foi escrito dessa forma"]
+    Guess --> Drift["Trabalho é repetido<br/>e a recuperação é lenta"]
 ```
 
-With state persistence files, new sessions can pick up quickly:
+Com arquivos de persistência de estado, novas sessões podem retomar rapidamente:
 
 ```mermaid
 flowchart LR
-    Work["Session 1 work"] --> Progress["PROGRESS.md<br/>done / in progress / next step"]
-    Work --> Decisions["DECISIONS.md<br/>why this approach was chosen"]
-    Work --> Verify["Verification notes<br/>which tests pass and fail"]
-    Work --> Commit["Git checkpoint<br/>exact repo state"]
+    Work["Trabalho da Sessão 1"] --> Progress["PROGRESS.md<br/>concluído / em andamento / próximo passo"]
+    Work --> Decisions["DECISIONS.md<br/>motivos da escolha da abordagem"]
+    Work --> Verify["Notas de verificação<br/>quais testes passam e falham"]
+    Work --> Commit["Checkpoint no Git<br/>estado exato do repositório"]
 
-    Progress --> Rebuild["Session 2 rebuild"]
+    Progress --> Rebuild["Reconstrução de contexto<br/>na Sessão 2"]
     Decisions --> Rebuild
     Verify --> Rebuild
     Commit --> Rebuild
 
-    Rebuild --> Resume["New session picks up quickly"]
+    Rebuild --> Resume["Nova sessão retoma o trabalho rapidamente"]
 ```
+## Conceitos Fundamentais
 
-## Core Concepts
+* **Janelas de contexto são finitas**: Não importa o tamanho anunciado da janela (128K, 200K, 1M de tokens), tarefas longas eventualmente irão esgotá-la. Quando isso acontece, é necessário realizar uma compactação do contexto (com perda de informações) ou iniciar uma nova sessão — e ambas as opções implicam algum tipo de perda.
+* **Arquivos de persistência de estado**: Arquivos que armazenam o estado atual do trabalho e permitem que uma nova sessão retome exatamente de onde a anterior parou. Na forma mais simples, incluem registros de progresso, resultados de verificações e próximos passos.
+* **Custo de reconstrução** (*rebuild cost*): O tempo necessário para que uma nova sessão alcance um estado em que consiga executar trabalho de forma produtiva. Um bom *harness* pode reduzir esse tempo de 15 minutos para apenas 3 minutos.
+* **Drift (desvio)**: A diferença entre o entendimento do agente e o estado real do repositório de código. Cada troca de sessão introduz algum nível de desvio; sem controle, esse efeito se acumula ao longo do tempo.
+* **Ansiedade de contexto** (*context anxiety*): Fenômeno observado pela Anthropic em que agentes passam a acelerar a conclusão de tarefas ao perceberem que o limite de contexto está próximo. Eles encerram atividades prematuramente para evitar perda de informação. Em essência, trata-se de uma ansiedade irracional relacionada ao consumo de recursos.
+* **Compactação versus reinicialização** (*compaction vs. reset*): A compactação resume informações dentro da mesma sessão (preservando o "o quê", mas potencialmente perdendo o "porquê"). A reinicialização inicia uma nova sessão a partir de artefatos persistidos (ambiente mais limpo, mas dependente da qualidade e completude desses artefatos).
 
-- **Context windows are finite**: No matter what window size is claimed (128K, 200K, 1M), long tasks will eventually exhaust them. After exhaustion, either compaction (losing information) or reset (starting a new session) is required — both lose something.
-- **State persistence files**: Persisted state files that let a new session unambiguously resume where the last one left off. The most basic form includes progress logs, verification records, and next actions.
-- **Rebuild cost**: The time a new session needs to reach an executable state. A good harness can compress rebuild cost from 15 minutes to 3 minutes.
-- **Drift**: The gap between the agent's understanding and the actual state of the code repository. Every session boundary introduces drift; without control, it compounds session after session.
-- **Context anxiety**: A phenomenon observed by Anthropic — agents exhibit rushed finish behavior when approaching context limits, ending tasks early to avoid information loss. At its core, it's an irrational resource anxiety.
-- **Compaction vs. reset**: Compaction summarizes context within the same session (keeps "what," may lose "why"); reset opens a new session rebuilding from persisted state (clean but depends on artifact completeness).
+## O Que Acontece Quando a Continuidade É Quebrada
 
-## What Happens When Continuity Breaks
+A sessão anterior consumiu uma quantidade significativa de contexto analisando três abordagens diferentes e escolhendo a opção B. O agente da sessão atual não tem acesso a essa análise e pode tomar uma nova decisão com base em informações incompletas — possivelmente escolhendo a opção A. As informações disponíveis são as mesmas, mas a conclusão muda porque o contexto que sustentava a decisão original foi perdido.
 
-The previous session spent significant context budget analyzing three approaches and choosing option B. This session's agent doesn't know about that analysis and might re-decide based on incomplete information — potentially choosing option A. Same information, different conclusion, because the decision-making context is gone.
+Um problema ainda mais grave é o trabalho duplicado. O agente não sabe ao certo se determinada tarefa já foi concluída e acaba executando-a novamente. Em alguns casos, ele realiza parte do trabalho, descobre um conflito com a implementação existente e precisa refazer tudo. Sem registros de progresso, a nova sessão não tem visibilidade sobre o que já foi feito.
 
-Even worse is duplicate work. The agent isn't sure whether certain work was already completed and does it again. Or worse — does half of it, discovers a conflict with the existing implementation, and has to rework. Without progress records, the new session has no idea what's already been done.
+Ao longo de várias sessões, a direção da implementação pode se afastar silenciosamente dos requisitos originais. Cada nova sessão possui uma compreensão ligeiramente diferente dos objetivos do projeto. Pequenos desvios vão se acumulando, e o resultado final pode acabar distante da intenção inicial.
 
-Over several sessions, the implementation direction may have silently drifted from the original requirements. Each new session has a slightly different understanding of the project goals. Each deviation compounds on the last, and the final result may be far removed from the original intent.
+Existe também a lacuna de verificação. Os resultados obtidos na sessão anterior (quais testes passam, quais falham e os motivos dessas falhas) não foram registrados. A nova sessão precisa executar novamente todas as verificações para compreender o estado atual do sistema. O diagnóstico recomeça do zero a cada sessão, desperdiçando tempo e contexto.
 
-There's also the verification gap. The previous session's verification results (which tests pass, which fail, why they fail) weren't recorded. The new session has to re-run all verification to understand the current state. Every session re-diagnoses from scratch, every time wasting precious context.
+Tanto a OpenAI quanto a Anthropic destacam a importância da persistência estruturada de estado em suas documentações. O artigo sobre *Harness Engineering* da OpenAI trata o repositório como um **registro operacional** (*operational record*): os resultados de cada operação devem deixar evidências rastreáveis dentro do projeto. Já a documentação sobre agentes de longa duração da Anthropic recomenda explicitamente o uso de **arquivos de handoff**, documentos estruturados contendo o estado atual, problemas conhecidos e próximos passos.
 
-Both OpenAI and Anthropic emphasize structured state persistence in their documentation. OpenAI's harness engineering article treats the repository as an "operational record" — every operation's results should leave traceable evidence in the repo. Anthropic's long-running agents documentation specifically recommends "handoff files" — structured documents containing current state, known issues, and next actions.
+## Abordagens Práticas para Persistência de Estado
 
-## Practical Approaches to State Persistence
+Princípio fundamental: **trate o agente como um engenheiro cuja memória de curto prazo é apagada ao final de cada sessão.** Antes de "encerrar o expediente", ele precisa registrar as informações críticas para que o próximo agente do "turno" consiga continuar o trabalho rapidamente.
 
-Core approach: **Treat the agent like an engineer whose short-term memory gets wiped at every session.** Before it "clocks out," it must write down critical information so the next "shift" agent can pick up quickly.
-
-**Tool 1: Progress file (PROGRESS.md).** The most basic state persistence file:
+**Ferramenta 1: Arquivo de progresso (PROGRESS.md).** O mecanismo mais simples de persistência de estado é um arquivo de progresso:
 
 ```markdown
-# Project Progress
+# Progresso do Projeto
 
-## Current State
-- Latest commit: abc1234 (feat: add user preferences endpoint)
-- Test status: 42/43 passing (test_pagination_edge_case failing)
-- Lint: passing
+## Estado Atual
+- Último commit: abc1234 (feat: adicionar endpoint de preferências do usuário)
+- Status dos testes: 42/43 passando (falha em `test_pagination_edge_case`)
+- Lint: passando
 
-## Completed
-- [x] User model and database migration
-- [x] Basic CRUD endpoints
-- [x] Auth middleware integration
+## Concluído
+- [x] Modelo de usuário e migração de banco de dados
+- [x] Endpoints básicos de CRUD
+- [x] Integração do middleware de autenticação
 
-## In Progress
-- [ ] Pagination feature (90% - edge case test failing)
+## Em Andamento
+- [ ] Funcionalidade de paginação (90% concluída — teste de caso limite ainda falhando)
 
-## Known Issues
-- test_pagination_edge_case returns 500 on empty result sets
-- Need to confirm whether deleted users should appear in listings
+## Problemas Conhecidos
+- `test_pagination_edge_case` retorna erro 500 quando o conjunto de resultados está vazio
+- É necessário confirmar se usuários excluídos devem aparecer nas listagens
 
-## Next Steps
-1. Fix pagination edge case bug
-2. Add "include deleted users" query parameter
-3. Update API documentation
+## Próximos Passos
+1. Corrigir o bug do caso limite da paginação
+2. Adicionar o parâmetro de consulta `includeDeletedUsers`
+3. Atualizar a documentação da API
 ```
 
-**Tool 2: Decision log (DECISIONS.md).** Record important design decisions and reasons. No need for detailed design documents — just "what decision, why, when":
+**Ferramenta 2: Registro de Decisões (DECISIONS.md).** Registre decisões importantes de arquitetura e implementação juntamente com seus motivos. Não é necessário criar documentos extensos de design — apenas registrar **o que foi decidido, por que a decisão foi tomada e quando ela ocorreu**.
 
 ```markdown
-# Design Decisions
+# Decisões de Design
 
-## 2024-01-15: Use Redis for user preferences caching
-- Reason: High read frequency (every API call), small data size
-- Rejected alternative: PostgreSQL materialized view (high change frequency makes maintenance cost not worthwhile)
-- Constraint: Cache TTL of 5 minutes, active invalidation on write
+## 15/01/2024: Utilizar Redis para cache de preferências do usuário
+
+- **Motivo:** Alta frequência de leitura (praticamente todas as chamadas da API) e pequeno volume de dados.
+- **Alternativa rejeitada:** *Materialized View* no PostgreSQL (a alta frequência de alterações não justifica o custo de manutenção).
+- **Restrição:** TTL do cache de 5 minutos, com invalidação ativa sempre que ocorrer uma escrita.
 ```
+**Ferramenta 3: Commits do Git como Checkpoints.** Realize um commit após concluir cada unidade atômica de trabalho. As mensagens de commit devem explicar não apenas **o que foi feito**, mas também **por que a mudança foi necessária**. Os commits funcionam como snapshots gratuitos e versionados automaticamente do estado do projeto. Além de permitirem recuperação de código, eles ajudam novas sessões a reconstruir rapidamente o histórico recente de decisões e implementações.
 
-**Tool 3: Git commits as checkpoints.** Commit after completing each atomic unit of work. Commit messages should explain what was done and why. These are free, automatically versioned state snapshots.
-
-**Tool 4: init.sh or harness initialization flow.** Specify in `AGENTS.md` the "clock-in" and "clock-out" routines:
+**Ferramenta 4: `init.sh` ou Fluxo de Inicialização do Harness.** Defina no arquivo `AGENTS.md` os procedimentos de **entrada no turno** (*clock-in*) e **saída do turno** (*clock-out*) que todo agente deve seguir. O objetivo é garantir que cada nova sessão saiba exatamente como reconstruir o contexto e que cada sessão encerrada deixe informações suficientes para a próxima continuar o trabalho sem perda de conhecimento.
 
 ```markdown
-## At session start (clock in)
-1. Read PROGRESS.md for current state
-2. Read DECISIONS.md for important decisions
-3. Run make check to confirm repo is in consistent state
-4. Continue from PROGRESS.md "Next Steps" section
+## Ao iniciar uma sessão (clock-in)
+1. Ler `PROGRESS.md` para entender o estado atual do projeto
+2. Ler `DECISIONS.md` para conhecer as decisões importantes já tomadas
+3. Executar `make check` para confirmar que o repositório está em um estado consistente
+4. Continuar o trabalho a partir da seção **"Próximos Passos"** de `PROGRESS.md`
 
-## Before session end (clock out)
-1. Update PROGRESS.md
-2. Run make check to confirm consistent state
-3. Commit all completed work
+## Antes de encerrar a sessão (clock-out)
+1. Atualizar `PROGRESS.md`
+2. Executar `make check` para confirmar que o repositório permanece em um estado consistente
+3. Realizar commit de todo o trabalho concluído
 ```
+**Estratégia Mista**: Nem toda tarefa exige uma reinicialização de contexto (context reset). Tarefas curtas (menos de 30 minutos) normalmente podem ser concluídas dentro de uma única sessão. Tarefas longas (que se estendem por múltiplas sessões) devem utilizar arquivos de progresso e registros de decisões para garantir continuidade. Um critério prático é: se a tarefa consumir mais de 60% da janela de contexto disponível, comece a preparar o handoff.
 
-**Mixed strategy**: Not every task needs a context reset. Short tasks (under 30 minutes) can complete within one session. Long tasks (spanning sessions) must use progress files and decision logs for continuity. Decision criterion: if a task needs more than 60% of the window, start preparing the handoff.
+### Um Olhar Mais Profundo sobre a Ansiedade de Contexto
 
-### A Deeper Look at Context Anxiety
+Pesquisas da Anthropic publicadas em março de 2026 revelaram manifestações específicas da ansiedade de contexto. No Sonnet 4.5, quando o limite da janela de contexto se aproxima, o agente passa a apresentar um comportamento acentuado de "finalização apressada" (rushed finish).
 
-Anthropic's March 2026 research further revealed the specific manifestations of context anxiety: on Sonnet 4.5, when context approaches the window limit, the agent shows strong "rushed finish" behavior.
+Duas estratégias são utilizadas para lidar com esse problema:
 
-Two strategies address this:
+**Compactação (Compaction)**: Consiste em resumir as partes iniciais da conversa dentro da própria sessão. Vantagens: Mantém a continuidade da sessão. O agente continua tendo acesso ao "o quê" foi realizado. nformações importantes, como por que a opção B foi escolhida em vez da A ou por que determinada otimização foi descartada, podem desaparecer. Mais importante: a compactação não elimina a ansiedade de contexto. O agente sabe que a conversa já ocupou uma quantidade significativa de contexto e tende psicologicamente a acelerar a conclusão do trabalho.
 
-**Compaction**: Summarizing early conversation within the same session. Advantage: maintains continuity, the agent can see "what." Disadvantage: "why" is often lost in summaries — why option B was chosen over A, why a particular optimization was skipped. More critically, compaction doesn't eliminate context anxiety — the agent knows context was once large, and psychologically still tends to rush to finish.
+**Redefinição de contexto (Context reset)**: limpar completamente o contexto, iniciar uma nova sessão e reconstruir o trabalho a partir dos artefatos persistidos. Vantagem: estado mental limpo — a nova sessão não carrega a ansiedade de "estou ficando sem tempo". Desvantagem: depende da qualidade e da completude dos artefatos de transferência (handoff). Se o arquivo de progresso não contiver informações críticas, a nova sessão pode desperdiçar tempo seguindo uma direção equivocada.
 
-**Context reset**: Completely clearing context, opening a new session, rebuilding from persisted artifacts. Advantage: clean mental state — the new session has no "I'm running out of time" anxiety. Disadvantage: depends on the completeness of handoff artifacts. If the progress file is missing critical information, the new session may waste time going in the wrong direction.
+Os dados reais da Anthropic mostram que, para o Sonnet 4.5, a ansiedade de contexto (*context anxiety*) é severa o suficiente para que apenas a compactação (*compaction*) não seja suficiente — a redefinição de contexto (*context reset*) torna-se um componente crítico do design do *harness*. Já no Opus 4.5, esse comportamento é significativamente reduzido, permitindo que a compactação gerencie o contexto sem depender de redefinições frequentes. Isso leva a uma conclusão importante: **O design do harness precisa considerar profundamente o modelo-alvo, em vez de seguir um template genérico que serve para todos os casos.**
 
-Anthropic's actual data: for Sonnet 4.5, context anxiety is severe enough that compaction alone isn't sufficient — context reset becomes a critical component of harness design. But for Opus 4.5, this behavior is greatly diminished, and compaction can manage context without relying on resets. This means: **harness design needs specific understanding of the target model, not a one-size-fits-all template.**
+> Fonte: [Anthropic — *Harness design for long-running application development*](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
-> Source: [Anthropic: Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+## Exemplo do Mundo Real
 
-## Real-World Example
+Um agente recebeu a tarefa de implementar um sistema de blog com autenticação de usuários — 12 pontos de funcionalidade, com estimativa de 5 sessões necessárias.
 
-An agent was tasked with implementing a blog system with user authentication — 12 feature points, estimated 5 sessions needed.
+**Linha de base sem arquivos de persistência de estado**: Na sessão 1, foram implementados o modelo de usuário e as rotas básicas. Na sessão 2, o agente iniciou o trabalho sem se lembrar do contrato de interface do middleware de autenticação, gastando cerca de 15 minutos inferindo a intenção de design anterior. Na sessão 3, o desvio acumulado fez com que o agente começasse a reimplementar funcionalidades que já haviam sido concluídas. Na sessão 5, o repositório continha muito código redundante, mas a funcionalidade principal de autenticação ainda não havia passado nos testes end-to-end. Apenas 7 dos 12 pontos de funcionalidade foram concluídos, sendo que 3 apresentavam problemas ocultos de corretude.
 
-**Baseline without state persistence files**: Session 1 implemented the user model and basic routes. Session 2 started without the agent remembering the auth middleware's interface contract, spending ~15 minutes inferring the previous design intent. By session 3, accumulated drift caused the agent to start reimplementing already-completed features. By session 5, the repo contained lots of redundant code but the core auth feature still hadn't passed end-to-end tests. Only 7 of 12 feature points completed, 3 with hidden correctness issues.
+**Com arquivos de persistência de estado**: Utilizando arquivos de progresso, registros de decisões, registros de verificação e checkpoints do Git. O relatório de estado era atualizado automaticamente ao final de cada sessão. O custo de reconstrução da sessão 2 caiu para cerca de 3 minutos. Ao final da sessão 5, todos os 12 pontos de funcionalidade haviam sido concluídos e verificados.
 
-**With state persistence files**: Using progress files, decision logs, verification records, and git checkpoints. State report updated automatically at each session end. Session 2's rebuild cost dropped to ~3 minutes. By session 5, all 12 feature points completed and verified.
+Comparação quantitativa: o tempo de reconstrução foi reduzido em aproximadamente 78%, a taxa de conclusão de funcionalidades passou de 58% para 100% e a taxa de defeitos ocultos caiu de 43% para 8%.
 
-Quantitative comparison: rebuild time reduced ~78%, feature completion rate from 58% to 100%, hidden defect rate from 43% down to 8%.
+## Principais Conclusões
 
-## Key Takeaways
+- Janelas de contexto são um recurso finito. Tarefas longas inevitavelmente se estenderão por múltiplas sessões, e as sessões perderão informações ao longo do tempo — essa é uma realidade objetiva.
+- A solução não é ter janelas de contexto maiores, mas sim uma melhor persistência de estado. Arquivos de progresso, registros de decisões e checkpoints do Git trabalham em conjunto para permitir que novas sessões retomem o trabalho de onde as anteriores pararam.
+- Trate o agente como um engenheiro cuja memória de curto prazo é apagada ao final de cada sessão: antes de “encerrar o expediente”, registre o que foi feito, por que foi feito e quais são os próximos passos.
+- O custo de reconstrução (*rebuild cost*) é a métrica principal. Um bom *harness* deve permitir que novas sessões retornem a um estado executável em até 3 minutos.
+- Estratégia híbrida: tarefas curtas dentro de uma mesma sessão; tarefas longas utilizando artefatos estruturados para garantir continuidade entre sessões.
 
-- Context windows are a finite resource. Long tasks will span sessions, and sessions will lose information — this is objective reality.
-- The solution isn't bigger windows — it's better state persistence. Progress files, decision logs, and git checkpoints work together to let new sessions pick up where previous ones left off.
-- Treat the agent like an engineer whose short-term memory gets wiped every session: before "clocking out," write down what was done, why, and what's next.
-- Rebuild cost is the key metric. A good harness should get new sessions to an executable state within 3 minutes.
-- Mixed strategy: short tasks within sessions, long tasks with structured artifacts for continuity.
-
-## Further Reading
+## Leitura Complementar
 
 - [Anthropic: Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
@@ -170,10 +167,10 @@ Quantitative comparison: rebuild time reduced ~78%, feature completion rate from
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
 - [HumanLayer: Harness Engineering for Coding Agents](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
 
-## Exercises
+## Exercícios
 
-1. **State persistence measurement**: Pick a development task needing at least 3 sessions. Without providing any state persistence files, record at each session start how much context the agent spends "figuring out what happened last time." After each session, create a progress file and let the next session start from it. Compare rebuild costs with and without progress files.
+1. **Medição da persistência de estado**: Escolha uma tarefa de desenvolvimento que exija pelo menos 3 sessões. Sem fornecer qualquer arquivo de persistência de estado, registre no início de cada sessão quanto tempo o agente gasta “descobrindo o que aconteceu na sessão anterior”. Após cada sessão, crie um arquivo de progresso e permita que a próxima sessão comece a partir dele. Compare os custos de reconstrução com e sem arquivos de progresso.
 
-2. **Handoff template design**: Design a minimal handoff template with four fields: repo state (commit hash), runtime state (test pass rate), blockers, next actions. Let a completely fresh agent session restore project state using only this template. Record ambiguities encountered during restoration, iterate to improve the template.
+2. **Criação de um template de handoff**: Desenvolva um template mínimo de handoff com quatro campos: estado do repositório (hash do commit), estado de execução (taxa de sucesso dos testes), bloqueios (*blockers*) e próximas ações. Permita que uma sessão completamente nova do agente restaure o estado do projeto utilizando apenas esse template. Registre as ambiguidades encontradas durante a restauração e refine o template iterativamente.
 
-3. **Mixed strategy experiment**: In a 5-session development task, compare three strategies: (a) always start fresh sessions + progress files, (b) do as much as possible in one session (context compaction), (c) mixed strategy (short tasks in-session, long tasks across sessions + progress files). Compare rebuild time, feature completion rate, and decision consistency.
+3. **Experimento com estratégia híbrida**: Em uma tarefa de desenvolvimento com 5 sessões, compare três abordagens: (a) sempre iniciar sessões novas utilizando arquivos de progresso, (b) fazer o máximo possível dentro de uma única sessão (compactação de contexto), e (c) estratégia híbrida (tarefas curtas dentro da sessão e tarefas longas distribuídas entre sessões com arquivos de progresso). Compare o tempo de reconstrução, a taxa de conclusão de funcionalidades e a consistência das decisões.
