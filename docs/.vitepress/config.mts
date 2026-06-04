@@ -103,18 +103,18 @@ const viProjectItems = [
   { text: "Tính liên tục đa phiên", link: "/vi/projects/project-03-multi-session-continuity/" },
   { text: "Phản hồi Runtime và Kiểm soát Phạm vi", link: "/vi/projects/project-04-incremental-indexing/" },
   { text: "Tự xác minh và Phân tách Vai trò", link: "/vi/projects/project-05-grounded-qa-verification/" },
-  { text: "Harness Hoàn chỉnh", link: "/vi/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Harness Hoàn chỉnh", link: "/vi/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const viResourceItems = [
   { text: "Tổng quan", link: "/vi/resources/" },
   { text: "Mẫu tiếng Anh", link: "/vi/resources/templates/" },
   { text: "Tài liệu tham khảo tiếng Anh", link: "/vi/resources/reference/" },
-  { text: "Gói Nâng cao", link: "/vi/resources/openai-advanced/" }
+  { text: "Gói Nâng cao", link: "/vi/resources/openai-advanced/" },
 ];
 
 const viSkillItems = [
-  { text: "Tổng quan về Kỹ năng", link: "/vi/skills/" }
+  { text: "Tổng quan về Kỹ năng", link: "/vi/skills/" },
 ];
 
 const ruLectureItems = [
@@ -130,7 +130,7 @@ const ruLectureItems = [
   { text: "Почему агенты слишком рано объявляют успех", link: "/ru/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "Только сквозной прогон — настоящая проверка", link: "/ru/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Наблюдаемость — часть harness", link: "/ru/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "Каждая сессия должна оставлять чистое состояние", link: "/ru/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "Каждая сессия должна оставлять чистое состояние", link: "/ru/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const ruProjectItems = [
@@ -140,18 +140,18 @@ const ruProjectItems = [
   { text: "Непрерывность между сессиями", link: "/ru/projects/project-03-multi-session-continuity/" },
   { text: "Обратная связь и контроль скоупа", link: "/ru/projects/project-04-incremental-indexing/" },
   { text: "Самопроверка и обоснованные ответы", link: "/ru/projects/project-05-grounded-qa-verification/" },
-  { text: "Полный harness (капстоун)", link: "/ru/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Полный harness (капстоун)", link: "/ru/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const ruResourceItems = [
   { text: "Обзор", link: "/ru/resources/" },
   { text: "Шаблоны", link: "/ru/resources/templates/" },
   { text: "Справочник", link: "/ru/resources/reference/" },
-  { text: "Расширенный пакет", link: "/ru/resources/openai-advanced/" }
+  { text: "Расширенный пакет", link: "/ru/resources/openai-advanced/" },
 ];
 
 const ruSkillItems = [
-  { text: "Обзор скиллов", link: "/ru/skills/" }
+  { text: "Обзор скиллов", link: "/ru/skills/" },
 ];
 
 const uzLectureItems = [
@@ -167,7 +167,7 @@ const uzLectureItems = [
   { text: "Agentlar nega vaqtidan oldin gʻalabani eʼlon qiladi", link: "/uz/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "End-to-end testlar nega natijani oʻzgartiradi", link: "/uz/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Kuzatuvchanlik nega harness ichida boʻlishi kerak", link: "/uz/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "Har bir sessiya nega toza holat qoldirishi kerak", link: "/uz/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "Har bir sessiya nega toza holat qoldirishi kerak", link: "/uz/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const uzProjectItems = [
@@ -177,18 +177,18 @@ const uzProjectItems = [
   { text: "Koʻp sessiyali davomiylik", link: "/uz/projects/project-03-multi-session-continuity/" },
   { text: "Runtime fikr-mulohaza va skoup nazorati", link: "/uz/projects/project-04-incremental-indexing/" },
   { text: "Oʻz-oʻzini tekshirish va rollarni ajratish", link: "/uz/projects/project-05-grounded-qa-verification/" },
-  { text: "Toʻliq harness (yakuniy loyiha)", link: "/uz/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Toʻliq harness (yakuniy loyiha)", link: "/uz/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const uzResourceItems = [
   { text: "Umumiy koʻrinish", link: "/uz/resources/" },
   { text: "Shablonlar", link: "/uz/resources/templates/" },
   { text: "Maʼlumotnoma", link: "/uz/resources/reference/" },
-  { text: "Kengaytirilgan paket", link: "/uz/resources/openai-advanced/" }
+  { text: "Kengaytirilgan paket", link: "/uz/resources/openai-advanced/" },
 ];
 
 const uzSkillItems = [
-  { text: "Malakalar umumiy koʻrinishi", link: "/uz/skills/" }
+  { text: "Malakalar umumiy koʻrinishi", link: "/uz/skills/" },
 ];
 
 const koLectureItems = [
@@ -204,7 +204,7 @@ const koLectureItems = [
   { text: "에이전트가 너무 일찍 완료를 선언하는 이유", link: "/ko/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "엔드투엔드 테스트가 결과를 바꾸는 이유", link: "/ko/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "관측 가능성이 하네스 안에 있어야 하는 이유", link: "/ko/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "모든 세션이 클린 상태로 끝나야 하는 이유", link: "/ko/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "모든 세션이 클린 상태로 끝나야 하는 이유", link: "/ko/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const koProjectItems = [
@@ -214,18 +214,18 @@ const koProjectItems = [
   { text: "다중 세션 연속성", link: "/ko/projects/project-03-multi-session-continuity/" },
   { text: "런타임 피드백과 범위 제어", link: "/ko/projects/project-04-incremental-indexing/" },
   { text: "자기 검증과 역할 분리", link: "/ko/projects/project-05-grounded-qa-verification/" },
-  { text: "완성형 하네스(캡스톤)", link: "/ko/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "완성형 하네스(캡스톤)", link: "/ko/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const koResourceItems = [
   { text: "리소스 모음 개요", link: "/ko/resources/" },
   { text: "한국어 템플릿", link: "/ko/resources/templates/" },
   { text: "한국어 레퍼런스", link: "/ko/resources/reference/" },
-  { text: "고급 리소스 팩", link: "/ko/resources/openai-advanced/" }
+  { text: "고급 리소스 팩", link: "/ko/resources/openai-advanced/" },
 ];
 
 const koSkillItems = [
-  { text: "스킬 개요", link: "/ko/skills/" }
+  { text: "스킬 개요", link: "/ko/skills/" },
 ];
 
 const jaLectureItems = [
@@ -241,7 +241,7 @@ const jaLectureItems = [
   { text: "エージェントの早すぎる完了宣言を防ぐ", link: "/ja/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "End-to-End テストだけが本当の検証である", link: "/ja/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "エージェントのランタイムを観測可能にする", link: "/ja/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "すべてのセッションをきれいな引き継ぎで終える", link: "/ja/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "すべてのセッションをきれいな引き継ぎで終える", link: "/ja/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const jaProjectItems = [
@@ -251,18 +251,18 @@ const jaProjectItems = [
   { text: "セッション再起動後もエージェントが作業を続ける", link: "/ja/projects/project-03-multi-session-continuity/" },
   { text: "ランタイムフィードバックでエージェントの挙動を修正する", link: "/ja/projects/project-04-incremental-indexing/" },
   { text: "エージェントに自分の作業を検証させる", link: "/ja/projects/project-05-grounded-qa-verification/" },
-  { text: "完全なエージェント harness を構築する（総合課題）", link: "/ja/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "完全なエージェント harness を構築する（総合課題）", link: "/ja/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const jaResourceItems = [
   { text: "概要", link: "/ja/resources/" },
   { text: "テンプレート", link: "/ja/resources/templates/" },
   { text: "リファレンス", link: "/ja/resources/reference/" },
-  { text: "高度なパック", link: "/ja/resources/openai-advanced/" }
+  { text: "高度なパック", link: "/ja/resources/openai-advanced/" },
 ];
 
 const jaSkillItems = [
-  { text: "スキル概要", link: "/ja/skills/" }
+  { text: "スキル概要", link: "/ja/skills/" },
 ];
 
 const esLectureItems = [
@@ -278,7 +278,7 @@ const esLectureItems = [
   { text: "Evita que los agentes declaren victoria demasiado pronto", link: "/es/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "Solo las pruebas end-to-end son verificación real", link: "/es/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Haz observable el runtime del agente", link: "/es/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "Deja un handoff limpio al final de cada sesión", link: "/es/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "Deja un handoff limpio al final de cada sesión", link: "/es/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const esProjectItems = [
@@ -288,18 +288,18 @@ const esProjectItems = [
   { text: "Mantén al agente trabajando tras reiniciar sesiones", link: "/es/projects/project-03-multi-session-continuity/" },
   { text: "Usa feedback de runtime para corregir el comportamiento", link: "/es/projects/project-04-incremental-indexing/" },
   { text: "Haz que el agente verifique su propio trabajo", link: "/es/projects/project-05-grounded-qa-verification/" },
-  { text: "Construye un harness completo (capstone)", link: "/es/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Construye un harness completo (capstone)", link: "/es/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const esResourceItems = [
   { text: "Resumen", link: "/es/resources/" },
   { text: "Plantillas", link: "/es/resources/templates/" },
   { text: "Referencia", link: "/es/resources/reference/" },
-  { text: "Paquete avanzado", link: "/es/resources/openai-advanced/" }
+  { text: "Paquete avanzado", link: "/es/resources/openai-advanced/" },
 ];
 
 const esSkillItems = [
-  { text: "Resumen de Skills", link: "/es/skills/" }
+  { text: "Resumen de Skills", link: "/es/skills/" },
 ];
 
 const frLectureItems = [
@@ -315,7 +315,7 @@ const frLectureItems = [
   { text: "Empêcher les agents de déclarer victoire trop tôt", link: "/fr/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "Seul le test end-to-end est une vraie vérification", link: "/fr/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Rendre le runtime de l'agent observable", link: "/fr/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "Laisser un handoff propre à la fin de chaque session", link: "/fr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "Laisser un handoff propre à la fin de chaque session", link: "/fr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const frProjectItems = [
@@ -325,18 +325,18 @@ const frProjectItems = [
   { text: "Garder l'agent au travail après les redémarrages", link: "/fr/projects/project-03-multi-session-continuity/" },
   { text: "Utiliser le feedback runtime pour corriger le comportement", link: "/fr/projects/project-04-incremental-indexing/" },
   { text: "Faire vérifier son propre travail par l'agent", link: "/fr/projects/project-05-grounded-qa-verification/" },
-  { text: "Construire un harness complet (capstone)", link: "/fr/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Construire un harness complet (capstone)", link: "/fr/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const frResourceItems = [
   { text: "Aperçu", link: "/fr/resources/" },
   { text: "Modèles", link: "/fr/resources/templates/" },
   { text: "Référence", link: "/fr/resources/reference/" },
-  { text: "Pack avancé", link: "/fr/resources/openai-advanced/" }
+  { text: "Pack avancé", link: "/fr/resources/openai-advanced/" },
 ];
 
 const frSkillItems = [
-  { text: "Aperçu des Skills", link: "/fr/skills/" }
+  { text: "Aperçu des Skills", link: "/fr/skills/" },
 ];
 
 const deLectureItems = [
@@ -352,7 +352,7 @@ const deLectureItems = [
   { text: "Verhindern, dass Agenten zu früh Erfolg melden", link: "/de/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "Nur End-to-End-Tests sind echte Verifikation", link: "/de/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Die Runtime des Agenten beobachtbar machen", link: "/de/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "Sauberes Handoff am Ende jeder Session", link: "/de/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "Sauberes Handoff am Ende jeder Session", link: "/de/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const deProjectItems = [
@@ -362,18 +362,18 @@ const deProjectItems = [
   { text: "Den Agenten über Session-Neustarts hinweg weiterarbeiten lassen", link: "/de/projects/project-03-multi-session-continuity/" },
   { text: "Runtime-Feedback nutzen, um Agentenverhalten zu korrigieren", link: "/de/projects/project-04-incremental-indexing/" },
   { text: "Den Agenten seine eigene Arbeit verifizieren lassen", link: "/de/projects/project-05-grounded-qa-verification/" },
-  { text: "Einen vollständigen Agenten-harness bauen (Capstone)", link: "/de/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Einen vollständigen Agenten-harness bauen (Capstone)", link: "/de/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const deResourceItems = [
   { text: "Übersicht", link: "/de/resources/" },
   { text: "Vorlagen", link: "/de/resources/templates/" },
   { text: "Referenz", link: "/de/resources/reference/" },
-  { text: "Erweitertes Paket", link: "/de/resources/openai-advanced/" }
+  { text: "Erweitertes Paket", link: "/de/resources/openai-advanced/" },
 ];
 
 const deSkillItems = [
-  { text: "Skills Übersicht", link: "/de/skills/" }
+  { text: "Skills Übersicht", link: "/de/skills/" },
 ];
 
 const arLectureItems = [
@@ -389,7 +389,7 @@ const arLectureItems = [
   { text: "منع الوكلاء من إعلان النجاح مبكرًا", link: "/ar/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "الاختبار end-to-end هو التحقق الحقيقي", link: "/ar/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "اجعل runtime الوكيل قابلًا للملاحظة", link: "/ar/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "اترك handoff نظيفًا في نهاية كل جلسة", link: "/ar/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "اترك handoff نظيفًا في نهاية كل جلسة", link: "/ar/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const arProjectItems = [
@@ -399,18 +399,18 @@ const arProjectItems = [
   { text: "أبقِ الوكيل يعمل بعد إعادة تشغيل الجلسات", link: "/ar/projects/project-03-multi-session-continuity/" },
   { text: "استخدم feedback في runtime لتصحيح سلوك الوكيل", link: "/ar/projects/project-04-incremental-indexing/" },
   { text: "اجعل الوكيل يتحقق من عمله", link: "/ar/projects/project-05-grounded-qa-verification/" },
-  { text: "ابنِ harness كاملًا للوكيل (Capstone)", link: "/ar/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "ابنِ harness كاملًا للوكيل (Capstone)", link: "/ar/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const arResourceItems = [
   { text: "نظرة عامة", link: "/ar/resources/" },
   { text: "قوالب", link: "/ar/resources/templates/" },
   { text: "مرجع", link: "/ar/resources/reference/" },
-  { text: "حزمة متقدمة", link: "/ar/resources/openai-advanced/" }
+  { text: "حزمة متقدمة", link: "/ar/resources/openai-advanced/" },
 ];
 
 const arSkillItems = [
-  { text: "نظرة عامة على المهارات", link: "/ar/skills/" }
+  { text: "نظرة عامة على المهارات", link: "/ar/skills/" },
 ];
 
 const trLectureItems = [
@@ -426,7 +426,7 @@ const trLectureItems = [
   { text: "Ajanlar Neden Zaferi Çok Erken İlan Eder", link: "/tr/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "Uçtan Uca Test Sonuçları Neden Değiştirir", link: "/tr/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Gözlemlenebilirlik Neden Harness’ın İçinde Olmalı", link: "/tr/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "Her Oturum Neden Temiz Bir Durumla Bitmeli", link: "/tr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "Her Oturum Neden Temiz Bir Durumla Bitmeli", link: "/tr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const trProjectItems = [
@@ -436,18 +436,18 @@ const trProjectItems = [
   { text: "Çok Oturumlu Süreklilik", link: "/tr/projects/project-03-multi-session-continuity/" },
   { text: "Çalışma Zamanı Geri Bildirimi ve Kapsam Kontrolü", link: "/tr/projects/project-04-incremental-indexing/" },
   { text: "Öz-Doğrulama ve Rol Ayrımı", link: "/tr/projects/project-05-grounded-qa-verification/" },
-  { text: "Eksiksiz Harness (Bitirme Projesi)", link: "/tr/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "Eksiksiz Harness (Bitirme Projesi)", link: "/tr/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const trResourceItems = [
   { text: "Genel Bakış", link: "/tr/resources/" },
   { text: "Şablonlar", link: "/tr/resources/templates/" },
   { text: "Referans", link: "/tr/resources/reference/" },
-  { text: "Gelişmiş Paket", link: "/tr/resources/openai-advanced/" }
+  { text: "Gelişmiş Paket", link: "/tr/resources/openai-advanced/" },
 ];
 
 const trSkillItems = [
-  { text: "Yetenekler Genel Bakış", link: "/tr/skills/" }
+  { text: "Yetenekler Genel Bakış", link: "/tr/skills/" },
 ];
 
 const zhTWLectureItems = [
@@ -462,29 +462,66 @@ const zhTWLectureItems = [
   { text: "用功能清單約束 agent 該做什麼", link: "/zh-TW/lectures/lecture-08-why-feature-lists-are-harness-primitives/" },
   { text: "防止 agent 提前宣告完成", link: "/zh-TW/lectures/lecture-09-why-agents-declare-victory-too-early/" },
   { text: "跑通完整流程才算真正驗證", link: "/zh-TW/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
-  { text: "讓 agent 的執行過程可觀測", link: "/zh-TW/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
-  { text: "每次工作階段結束前都做好交接", link: "/zh-TW/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" }
+  { text: "讓 agent 的運行過程可觀測", link: "/zh-TW/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
+  { text: "每次會話結束前都做好交接", link: "/zh-TW/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 ];
 
 const zhTWProjectItems = [
-  { text: "歡迎來到專案實戰", link: "/zh-TW/projects/" },
-  { text: "只寫提示詞讓代理做，和定好規則再讓它做，差多少", link: "/zh-TW/projects/project-01-baseline-vs-minimal-harness/" },
-  { text: "讓代理看懂專案、銜接上次的工作", link: "/zh-TW/projects/project-02-agent-readable-workspace/" },
-  { text: "讓代理重啟後還能繼續執行", link: "/zh-TW/projects/project-03-multi-session-continuity/" },
-  { text: "用執行回饋修正代理的行為", link: "/zh-TW/projects/project-04-incremental-indexing/" },
-  { text: "讓代理自己檢查自己做得對不對", link: "/zh-TW/projects/project-05-grounded-qa-verification/" },
-  { text: "搭建完整的代理工作環境", link: "/zh-TW/projects/project-06-runtime-observability-and-debugging/" }
+  { text: "歡迎", link: "/zh-TW/projects/" },
+  { text: "提示詞驅動 vs 規則驅動", link: "/zh-TW/projects/project-01-baseline-vs-minimal-harness/" },
+  { text: "讓 agent 看懂項目、接住上次的工作", link: "/zh-TW/projects/project-02-agent-readable-workspace/" },
+  { text: "讓 agent 關掉再打開還能接著幹", link: "/zh-TW/projects/project-03-multi-session-continuity/" },
+  { text: "用運行反饋修正 agent 的行為", link: "/zh-TW/projects/project-04-incremental-indexing/" },
+  { text: "讓 agent 自己檢查自己做的對不對", link: "/zh-TW/projects/project-05-grounded-qa-verification/" },
+  { text: "搭建一套完整的 agent 工作環境", link: "/zh-TW/projects/project-06-runtime-observability-and-debugging/" },
 ];
 
 const zhTWResourceItems = [
-  { text: "繁體中文資源庫", link: "/zh-TW/resources/" },
-  { text: "範本指南", link: "/zh-TW/resources/templates/" },
-  { text: "參考資料", link: "/zh-TW/resources/reference/" },
-  { text: "OpenAI 高階資源包", link: "/zh-TW/resources/openai-advanced/" }
+  { text: "資料庫總覽", link: "/zh-TW/resources/" },
+  { text: "繁體中文範本", link: "/zh-TW/resources/templates/" },
+  { text: "繁體中文參考", link: "/zh-TW/resources/reference/" },
+  { text: "進階資源包", link: "/zh-TW/resources/openai-advanced/" },
 ];
 
 const zhTWSkillItems = [
-  { text: "Skills（技能集）", link: "/zh-TW/skills/" }
+  { text: "技能總覽", link: "/zh-TW/skills/" },
+];
+
+const ptBRLectureItems = [
+  { text: "Bem-vindo", link: "/pt-BR/" },
+  { text: "Por que agentes capazes ainda falham", link: "/pt-BR/lectures/lecture-01-why-capable-agents-still-fail/" },
+  { text: "O que realmente é um Harness", link: "/pt-BR/lectures/lecture-02-what-a-harness-actually-is/" },
+  { text: "Por que o repositório precisa se tornar a fonte da verdade", link: "/pt-BR/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/" },
+  { text: "Por que um único arquivo gigante de instruções falha", link: "/pt-BR/lectures/lecture-04-why-one-giant-instruction-file-fails/" },
+  { text: "Por que tarefas de longa duração perdem continuidade", link: "/pt-BR/lectures/lecture-05-why-long-running-tasks-lose-continuity/" },
+  { text: "Por que a inicialização precisa de sua própria etapa", link: "/pt-BR/lectures/lecture-06-why-initialization-needs-its-own-phase/" },
+  { text: "Por que agentes extrapolam e entregam pela metade", link: "/pt-BR/lectures/lecture-07-why-agents-overreach-and-under-finish/" },
+  { text: "Por que listas de funcionalidades são primitivas de Harness", link: "/pt-BR/lectures/lecture-08-why-feature-lists-are-harness-primitives/" },
+  { text: "Por que agentes declaram vitória cedo demais", link: "/pt-BR/lectures/lecture-09-why-agents-declare-victory-too-early/" },
+  { text: "Por que testes end-to-end mudam os resultados", link: "/pt-BR/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
+  { text: "Por que observabilidade pertence ao Harness", link: "/pt-BR/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
+  { text: "Por que toda sessão deve deixar um estado limpo", link: "/pt-BR/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
+];
+
+const ptBRProjectItems = [
+  { text: "Bem-vindo", link: "/pt-BR/projects/" },
+  { text: "Apenas Prompt vs. Regras Primeiro", link: "/pt-BR/projects/project-01-baseline-vs-minimal-harness/" },
+  { text: "Workspace Legível por Agentes", link: "/pt-BR/projects/project-02-agent-readable-workspace/" },
+  { text: "Continuidade entre Múltiplas Sessões", link: "/pt-BR/projects/project-03-multi-session-continuity/" },
+  { text: "Feedback em Runtime e Controle de Escopo", link: "/pt-BR/projects/project-04-incremental-indexing/" },
+  { text: "Autoverificação e Separação de Papéis", link: "/pt-BR/projects/project-05-grounded-qa-verification/" },
+  { text: "Harness Completo (Projeto Final)", link: "/pt-BR/projects/project-06-runtime-observability-and-debugging/" },
+];
+
+const ptBRResourceItems = [
+  { text: "Visão Geral", link: "/pt-BR/resources/" },
+  { text: "Templates em Português", link: "/pt-BR/resources/templates/" },
+  { text: "Referência em Português", link: "/pt-BR/resources/reference/" },
+  { text: "Pacote Avançado", link: "/pt-BR/resources/openai-advanced/" },
+];
+
+const ptBRSkillItems = [
+  { text: "Visão Geral das Skills", link: "/pt-BR/skills/" },
 ];
 
 const jaSourceItems = { lectures: jaLectureItems, projects: jaProjectItems, resources: jaResourceItems, skills: jaSkillItems };
@@ -498,7 +535,10 @@ const trSourceItems = { lectures: trLectureItems, projects: trProjectItems, reso
 const relinkItems = (items: Array<{ text: string; link: string }>, locale: string) =>
   items.map((item) => ({
     ...item,
-    link: item.link.replace(/^\/(en|zh|vi|ko|uz|ru|ja|es|fr|de|ar|zh-TW|tr)\//, `/${locale}/`)
+    link: item.link.replace(
+      /^\/(en|zh|vi|ko|uz|ru|ja|es|fr|de|ar|zh-TW|tr|pt-BR)\//,
+      `/${locale}/`,
+    ),
   }));
 
 const createLocaleTheme = (
@@ -525,7 +565,7 @@ const createLocaleTheme = (
     darkModeSwitch?: string;
     lightModeSwitchTitle?: string;
     darkModeSwitchTitle?: string;
-  }
+  },
 ) => {
   const lectures = relinkItems(sourceItems.lectures, locale);
   const projects = relinkItems(sourceItems.projects, locale);
@@ -538,12 +578,7 @@ const createLocaleTheme = (
       { text: labels.projects, link: projects[0].link, activeMatch: `^/${locale}/projects/` },
       { text: labels.resources, link: `/${locale}/resources/`, activeMatch: `^/${locale}/resources/` },
       { text: labels.skills, link: `/${locale}/skills/`, activeMatch: `^/${locale}/skills/` },
-      {
-        text: labels.tryHarness,
-        link: `https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/${locale}/resources/templates/index.md`,
-        target: "_blank",
-        rel: "noopener noreferrer"
-      }
+      { text: labels.tryHarness, link: `https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/${locale}/resources/templates/index.md`, target: "_blank", rel: "noopener noreferrer" },
     ],
     sidebar: {
       [`/${locale}/projects/`]: [{ text: labels.projects, items: projects }],
@@ -594,9 +629,7 @@ export default withMermaid(
     cleanUrls: true,
     srcExclude: ["temp/**"],
     ignoreDeadLinks: true,
-    head: [
-      ['link', { rel: 'icon', type: 'image/svg+xml', href: brandLogo }]
-    ],
+    head: [['link', { rel: 'icon', type: 'image/svg+xml', href: brandLogo }]],
     themeConfig: {
       logo: brandLogo,
       search: {
@@ -608,10 +641,10 @@ export default withMermaid(
       theme: {
         light: 'github-light',
         dark: 'github-dark'
-      }
+      },
     },
     mermaid: {
-      theme: 'base',
+      theme: "base",
       themeVariables: {
         primaryColor: '#F4F3EE',
         primaryBorderColor: '#D1D1D1',
@@ -624,7 +657,7 @@ export default withMermaid(
         nodeSpacing: 40,
         rankSpacing: 56,
         padding: 12
-      }
+      },
     },
     locales: {
       en: {
@@ -646,7 +679,7 @@ export default withMermaid(
             '/en/': [{ text: "Lectures", items: enLectureItems }]
           },
           socialLinks: [{ icon: "github", link: githubRepoTreeLink }]
-        }
+        },
       },
       zh: {
         label: "简体中文",
@@ -654,35 +687,52 @@ export default withMermaid(
         link: "/zh/",
         themeConfig: {
           nav: [
-            { text: "讲义", link: zhLectureItems[1].link, activeMatch: '^/zh/(lectures/.*)?$' },
-            { text: "项目", link: zhProjectItems[0].link, activeMatch: '^/zh/projects/' },
-            { text: "资料库", link: "/zh/resources/", activeMatch: '^/zh/resources/' },
-            { text: "技能", link: "/zh/skills/", activeMatch: '^/zh/skills/' },
-            { text: "Try Harness ↗", link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/zh/resources/templates/index.md", target: "_blank", rel: "noopener noreferrer" }
+            {
+              text: "讲义",
+              link: zhLectureItems[1].link,
+              activeMatch: "^/zh/(lectures/.*)?$",
+            },
+            {
+              text: "项目",
+              link: zhProjectItems[0].link,
+              activeMatch: "^/zh/projects/",
+            },
+            {
+              text: "资料库",
+              link: "/zh/resources/",
+              activeMatch: "^/zh/resources/",
+            },
+            { text: "技能", link: "/zh/skills/", activeMatch: "^/zh/skills/" },
+            {
+              text: "Try Harness ↗",
+              link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/zh/resources/templates/index.md",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
           ],
           sidebar: {
-            '/zh/projects/': [{ text: "项目", items: zhProjectItems }],
-            '/zh/resources/': [{ text: "资料库", items: zhResourceItems }],
-            '/zh/skills/': [{ text: "技能", items: zhSkillItems }],
-            '/zh/': [{ text: "讲义", items: zhLectureItems }]
+            "/zh/projects/": [{ text: "项目", items: zhProjectItems }],
+            "/zh/resources/": [{ text: "资料库", items: zhResourceItems }],
+            "/zh/skills/": [{ text: "技能", items: zhSkillItems }],
+            "/zh/": [{ text: "讲义", items: zhLectureItems }],
           },
           outline: {
-            level: [2, 3]
+            level: [2, 3],
           },
           docFooter: {
             prev: "上一篇",
-            next: "下一篇"
+            next: "下一篇",
           },
           lastUpdated: {
-            text: "最后更新于"
+            text: "最后更新于",
           },
           returnToTopLabel: "回到顶部",
           sidebarMenuLabel: "菜单",
           darkModeSwitchLabel: "主题",
           lightModeSwitchTitle: "切换到浅色模式",
           darkModeSwitchTitle: "切换到深色模式",
-          socialLinks: [{ icon: "github", link: githubRepoTreeLink }]
-        }
+          socialLinks: [{ icon: "github", link: githubRepoTreeLink }],
+        },
       },
       "zh-TW": {
         label: "繁體中文",
@@ -702,8 +752,8 @@ export default withMermaid(
           sidebarMenu: "選單",
           darkModeSwitch: "主題",
           lightModeSwitchTitle: "切換到淺色模式",
-          darkModeSwitchTitle: "切換到深色模式"
-        })
+          darkModeSwitchTitle: "切換到深色模式",
+        }),
       },
       ja: {
         label: "日本語",
@@ -724,8 +774,8 @@ export default withMermaid(
           sidebarMenu: "メニュー",
           darkModeSwitch: "テーマ",
           lightModeSwitchTitle: "ライトモードに切り替え",
-          darkModeSwitchTitle: "ダークモードに切り替え"
-        })
+          darkModeSwitchTitle: "ダークモードに切り替え",
+        }),
       },
       es: {
         label: "Español",
@@ -746,8 +796,8 @@ export default withMermaid(
           sidebarMenu: "Menú",
           darkModeSwitch: "Tema",
           lightModeSwitchTitle: "Cambiar a tema claro",
-          darkModeSwitchTitle: "Cambiar a tema oscuro"
-        })
+          darkModeSwitchTitle: "Cambiar a tema oscuro",
+        }),
       },
       fr: {
         label: "Français",
@@ -768,8 +818,8 @@ export default withMermaid(
           sidebarMenu: "Menu",
           darkModeSwitch: "Thème",
           lightModeSwitchTitle: "Passer au thème clair",
-          darkModeSwitchTitle: "Passer au thème sombre"
-        })
+          darkModeSwitchTitle: "Passer au thème sombre",
+        }),
       },
       de: {
         label: "Deutsch",
@@ -790,8 +840,8 @@ export default withMermaid(
           sidebarMenu: "Menü",
           darkModeSwitch: "Theme",
           lightModeSwitchTitle: "Zum hellen Theme wechseln",
-          darkModeSwitchTitle: "Zum dunklen Theme wechseln"
-        })
+          darkModeSwitchTitle: "Zum dunklen Theme wechseln",
+        }),
       },
       tr: {
         label: "Türkçe",
@@ -812,8 +862,8 @@ export default withMermaid(
           sidebarMenu: "Menü",
           darkModeSwitch: "Tema",
           lightModeSwitchTitle: "Açık temaya geç",
-          darkModeSwitchTitle: "Koyu temaya geç"
-        })
+          darkModeSwitchTitle: "Koyu temaya geç",
+        }),
       },
       ar: {
         label: "العربية",
@@ -834,8 +884,8 @@ export default withMermaid(
           sidebarMenu: "القائمة",
           darkModeSwitch: "السمة",
           lightModeSwitchTitle: "التبديل إلى السمة الفاتحة",
-          darkModeSwitchTitle: "التبديل إلى السمة الداكنة"
-        })
+          darkModeSwitchTitle: "التبديل إلى السمة الداكنة",
+        }),
       },
       vi: {
         label: "Tiếng Việt",
@@ -843,35 +893,58 @@ export default withMermaid(
         link: "/vi/",
         themeConfig: {
           nav: [
-            { text: "Bài giảng", link: viLectureItems[1].link, activeMatch: '^/vi/(lectures/.*)?$' },
-            { text: "Dự án", link: viProjectItems[0].link, activeMatch: '^/vi/projects/' },
-            { text: "Tài nguyên", link: "/vi/resources/", activeMatch: '^/vi/resources/' },
-            { text: "Kỹ năng", link: "/vi/skills/", activeMatch: '^/vi/skills/' },
-            { text: "Try Harness ↗", link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/vi/resources/templates/index.md", target: "_blank", rel: "noopener noreferrer" }
+            {
+              text: "Bài giảng",
+              link: viLectureItems[1].link,
+              activeMatch: "^/vi/(lectures/.*)?$",
+            },
+            {
+              text: "Dự án",
+              link: viProjectItems[0].link,
+              activeMatch: "^/vi/projects/",
+            },
+            {
+              text: "Tài nguyên",
+              link: "/vi/resources/",
+              activeMatch: "^/vi/resources/",
+            },
+            {
+              text: "Kỹ năng",
+              link: "/vi/skills/",
+              activeMatch: "^/vi/skills/",
+            },
+            {
+              text: "Try Harness ↗",
+              link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/vi/resources/templates/index.md",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
           ],
           sidebar: {
-            '/vi/projects/': [{ text: "Dự án", items: viProjectItems }],
-            '/vi/resources/': [{ text: "Thư viện Tài nguyên", items: viResourceItems }],
-            '/vi/skills/': [{ text: "Kỹ năng", items: viSkillItems }],
-            '/vi/': [{ text: "Bài giảng", items: viLectureItems }]
+            "/vi/projects/": [{ text: "Dự án", items: viProjectItems }],
+            "/vi/resources/": [
+              { text: "Thư viện Tài nguyên", items: viResourceItems },
+            ],
+            "/vi/skills/": [{ text: "Kỹ năng", items: viSkillItems }],
+            "/vi/": [{ text: "Bài giảng", items: viLectureItems }],
           },
           outline: {
-            level: [2, 3]
+            level: [2, 3],
           },
           docFooter: {
             prev: "Trang trước",
-            next: "Trang sau"
+            next: "Trang sau",
           },
           lastUpdated: {
-            text: "Cập nhật lần cuối"
+            text: "Cập nhật lần cuối",
           },
           returnToTopLabel: "Trở lên trên cùng",
           sidebarMenuLabel: "Menu",
           darkModeSwitchLabel: "Giao diện",
           lightModeSwitchTitle: "Chuyển sang chế độ sáng",
           darkModeSwitchTitle: "Chuyển sang chế độ tối",
-          socialLinks: [{ icon: "github", link: githubRepoTreeLink }]
-        }
+          socialLinks: [{ icon: "github", link: githubRepoTreeLink }],
+        },
       },
       ko: {
         label: "한국어",
@@ -879,36 +952,53 @@ export default withMermaid(
         link: "/ko/",
         themeConfig: {
           nav: [
-            { text: "강의", link: koLectureItems[1].link, activeMatch: '^/ko/(lectures/.*)?$' },
-            { text: "프로젝트", link: koProjectItems[0].link, activeMatch: '^/ko/projects/' },
-            { text: "리소스 모음", link: "/ko/resources/", activeMatch: '^/ko/resources/' },
-            { text: "스킬", link: "/ko/skills/", activeMatch: '^/ko/skills/' },
-            { text: "Try Harness ↗", link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/ko/resources/templates/index.md", target: "_blank", rel: "noopener noreferrer" }
+            {
+              text: "강의",
+              link: koLectureItems[1].link,
+              activeMatch: "^/ko/(lectures/.*)?$",
+            },
+            {
+              text: "프로젝트",
+              link: koProjectItems[0].link,
+              activeMatch: "^/ko/projects/",
+            },
+            {
+              text: "리소스 모음",
+              link: "/ko/resources/",
+              activeMatch: "^/ko/resources/",
+            },
+            { text: "스킬", link: "/ko/skills/", activeMatch: "^/ko/skills/" },
+            {
+              text: "Try Harness ↗",
+              link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/ko/resources/templates/index.md",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
           ],
           sidebar: {
-            '/ko/projects/': [{ text: "프로젝트", items: koProjectItems }],
-            '/ko/resources/': [{ text: "리소스 모음", items: koResourceItems }],
-            '/ko/skills/': [{ text: "스킬", items: koSkillItems }],
-            '/ko/': [{ text: "강의", items: koLectureItems }]
+            "/ko/projects/": [{ text: "프로젝트", items: koProjectItems }],
+            "/ko/resources/": [{ text: "리소스 모음", items: koResourceItems }],
+            "/ko/skills/": [{ text: "스킬", items: koSkillItems }],
+            "/ko/": [{ text: "강의", items: koLectureItems }],
           },
           outline: {
             level: [2, 3],
-            label: "이 페이지에서"
+            label: "이 페이지에서",
           },
           docFooter: {
             prev: "이전",
-            next: "다음"
+            next: "다음",
           },
           lastUpdated: {
-            text: "마지막 업데이트"
+            text: "마지막 업데이트",
           },
           returnToTopLabel: "맨 위로",
           sidebarMenuLabel: "메뉴",
           darkModeSwitchLabel: "테마",
           lightModeSwitchTitle: "라이트 모드로 전환",
           darkModeSwitchTitle: "다크 모드로 전환",
-          socialLinks: [{ icon: "github", link: githubRepoTreeLink }]
-        }
+          socialLinks: [{ icon: "github", link: githubRepoTreeLink }],
+        },
       },
       uz: {
         label: "Oʻzbek",
@@ -916,36 +1006,59 @@ export default withMermaid(
         link: "/uz/",
         themeConfig: {
           nav: [
-            { text: "Maʼruzalar", link: uzLectureItems[1].link, activeMatch: '^/uz/(lectures/.*)?$' },
-            { text: "Loyihalar", link: uzProjectItems[0].link, activeMatch: '^/uz/projects/' },
-            { text: "Kutubxona", link: "/uz/resources/", activeMatch: '^/uz/resources/' },
-            { text: "Malakalar", link: "/uz/skills/", activeMatch: '^/uz/skills/' },
-            { text: "Harness'ni sinash ↗", link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/uz/resources/templates/index.md", target: "_blank", rel: "noopener noreferrer" }
+            {
+              text: "Maʼruzalar",
+              link: uzLectureItems[1].link,
+              activeMatch: "^/uz/(lectures/.*)?$",
+            },
+            {
+              text: "Loyihalar",
+              link: uzProjectItems[0].link,
+              activeMatch: "^/uz/projects/",
+            },
+            {
+              text: "Kutubxona",
+              link: "/uz/resources/",
+              activeMatch: "^/uz/resources/",
+            },
+            {
+              text: "Malakalar",
+              link: "/uz/skills/",
+              activeMatch: "^/uz/skills/",
+            },
+            {
+              text: "Harness'ni sinash ↗",
+              link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/uz/resources/templates/index.md",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
           ],
           sidebar: {
-            '/uz/projects/': [{ text: "Loyihalar", items: uzProjectItems }],
-            '/uz/resources/': [{ text: "Resurslar kutubxonasi", items: uzResourceItems }],
-            '/uz/skills/': [{ text: "Malakalar", items: uzSkillItems }],
-            '/uz/': [{ text: "Maʼruzalar", items: uzLectureItems }]
+            "/uz/projects/": [{ text: "Loyihalar", items: uzProjectItems }],
+            "/uz/resources/": [
+              { text: "Resurslar kutubxonasi", items: uzResourceItems },
+            ],
+            "/uz/skills/": [{ text: "Malakalar", items: uzSkillItems }],
+            "/uz/": [{ text: "Maʼruzalar", items: uzLectureItems }],
           },
           outline: {
             level: [2, 3],
-            label: "Ushbu sahifada"
+            label: "Ushbu sahifada",
           },
           docFooter: {
             prev: "Oldingi",
-            next: "Keyingi"
+            next: "Keyingi",
           },
           lastUpdated: {
-            text: "Oxirgi yangilanish"
+            text: "Oxirgi yangilanish",
           },
           returnToTopLabel: "Yuqoriga qaytish",
           sidebarMenuLabel: "Menyu",
           darkModeSwitchLabel: "Mavzu",
           lightModeSwitchTitle: "Yorugʻ rejimga oʻtish",
           darkModeSwitchTitle: "Qorongʻi rejimga oʻtish",
-          socialLinks: [{ icon: "github", link: githubRepoTreeLink }]
-        }
+          socialLinks: [{ icon: "github", link: githubRepoTreeLink }],
+        },
       },
       ru: {
         label: "Русский",
@@ -953,36 +1066,118 @@ export default withMermaid(
         link: "/ru/",
         themeConfig: {
           nav: [
-            { text: "Лекции", link: ruLectureItems[1].link, activeMatch: '^/ru/(lectures/.*)?$' },
-            { text: "Проекты", link: ruProjectItems[0].link, activeMatch: '^/ru/projects/' },
-            { text: "Материалы", link: "/ru/resources/", activeMatch: '^/ru/resources/' },
-            { text: "Скиллы", link: "/ru/skills/", activeMatch: '^/ru/skills/' },
-            { text: "Try Harness ↗", link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/ru/resources/templates/index.md", target: "_blank", rel: "noopener noreferrer" }
+            {
+              text: "Лекции",
+              link: ruLectureItems[1].link,
+              activeMatch: "^/ru/(lectures/.*)?$",
+            },
+            {
+              text: "Проекты",
+              link: ruProjectItems[0].link,
+              activeMatch: "^/ru/projects/",
+            },
+            {
+              text: "Материалы",
+              link: "/ru/resources/",
+              activeMatch: "^/ru/resources/",
+            },
+            {
+              text: "Скиллы",
+              link: "/ru/skills/",
+              activeMatch: "^/ru/skills/",
+            },
+            {
+              text: "Try Harness ↗",
+              link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/ru/resources/templates/index.md",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
           ],
           sidebar: {
-            '/ru/projects/': [{ text: "Проекты", items: ruProjectItems }],
-            '/ru/resources/': [{ text: "Материалы", items: ruResourceItems }],
-            '/ru/skills/': [{ text: "Скиллы", items: ruSkillItems }],
-            '/ru/': [{ text: "Лекции", items: ruLectureItems }]
+            "/ru/projects/": [{ text: "Проекты", items: ruProjectItems }],
+            "/ru/resources/": [{ text: "Материалы", items: ruResourceItems }],
+            "/ru/skills/": [{ text: "Скиллы", items: ruSkillItems }],
+            "/ru/": [{ text: "Лекции", items: ruLectureItems }],
           },
           outline: {
             level: [2, 3],
-            label: "На этой странице"
+            label: "На этой странице",
           },
           docFooter: {
             prev: "Предыдущая",
-            next: "Следующая"
+            next: "Следующая",
           },
           lastUpdated: {
-            text: "Последнее обновление"
+            text: "Последнее обновление",
           },
           returnToTopLabel: "Наверх",
           sidebarMenuLabel: "Меню",
           darkModeSwitchLabel: "Тема",
           lightModeSwitchTitle: "Включить светлую тему",
           darkModeSwitchTitle: "Включить тёмную тему",
-          socialLinks: [{ icon: "github", link: githubRepoTreeLink }]
-        }
-      }
-    }
-}));
+          socialLinks: [{ icon: "github", link: githubRepoTreeLink }],
+        },
+      },
+      "pt-BR": {
+        label: "Português (Brasil)",
+        lang: "pt-BR",
+        link: "/pt-BR/",
+        themeConfig: {
+          nav: [
+            {
+              text: "Aulas",
+              link: ptBRLectureItems[1].link,
+              activeMatch: "^/pt-BR/(lectures/.*)?$",
+            },
+            {
+              text: "Projetos",
+              link: ptBRProjectItems[0].link,
+              activeMatch: "^/pt-BR/projects/",
+            },
+            {
+              text: "Recursos",
+              link: "/pt-BR/resources/",
+              activeMatch: "^/pt-BR/resources/",
+            },
+            {
+              text: "Skills",
+              link: "/pt-BR/skills/",
+              activeMatch: "^/pt-BR/skills/",
+            },
+            {
+              text: "Experimente Harness ↗",
+              link: "https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/pt-BR/resources/templates/index.md",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
+          ],
+          sidebar: {
+            "/pt-BR/projects/": [{ text: "Projetos", items: ptBRProjectItems }],
+            "/pt-BR/resources/": [
+              { text: "Biblioteca de recursos", items: ptBRResourceItems },
+            ],
+            "/pt-BR/skills/": [{ text: "Skills", items: ptBRSkillItems }],
+            "/pt-BR/": [{ text: "Aulas", items: ptBRLectureItems }],
+          },
+          outline: {
+            level: [2, 3],
+            label: "Nesta página",
+          },
+          docFooter: {
+            prev: "Página anterior",
+            next: "Próxima página",
+          },
+          lastUpdated: {
+            text: "Última atualização",
+          },
+          returnToTopLabel: "Retornar ao topo",
+          sidebarMenuLabel: "Menu",
+          darkModeSwitchLabel: "Tema",
+          lightModeSwitchTitle: "Ativar tema claro",
+          darkModeSwitchTitle: "Ativar tema escuro",
+          socialLinks: [{ icon: "github", link: githubRepoTreeLink }],
+        },
+      },
+    },
+  }),
+);
