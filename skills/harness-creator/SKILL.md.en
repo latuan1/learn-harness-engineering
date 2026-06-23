@@ -73,7 +73,7 @@ node skills/harness-creator/scripts/render-assessment-html.mjs --target /path/to
 node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
 ```
 
-Be clear that this is a structural benchmark. Real effectiveness still needs before/after agent sessions on representative tasks.
+Be clear that this is a structural benchmark. The benchmark first runs a self-check — it scaffolds a throwaway harness and validates it, proving the bundled scripts work end-to-end — then scores the target and eval coverage. Real effectiveness still needs before/after agent sessions on representative tasks.
 
 ## When to Read References
 

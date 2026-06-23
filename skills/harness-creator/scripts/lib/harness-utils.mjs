@@ -150,9 +150,14 @@ export function verificationCommands(project, explicitPackageManager) {
   };
 
   if (project.stack === 'python') {
+    // python3 is the portable name (many systems no longer ship a bare `python`).
+    // pytest exits 5 when it collects zero tests — harmless here, so don't let `set -e`
+    // treat "no tests yet" as a failure. compileall's -x skips virtualenvs and build
+    // artifacts so a syntax check doesn't choke on dependencies it shouldn't compile.
+    const py = 'python3';
     return [
-      'python -m pytest',
-      'python -m compileall .'
+      `${py} -m pytest || [ $? -eq 5 ]`,
+      `${py} -m compileall -q -x '(^|/)(\\.?venv|env|node_modules|build|dist|__pycache__)(/|$)' .`
     ];
   }
 
@@ -224,17 +229,17 @@ export function scoreHarness(files) {
   const checks = {
     instructions: [
       hasFile(byPath, ['AGENTS.md', 'CLAUDE.md'], 'Agent instruction file exists'),
-      textHas(agents, ['Startup Workflow', 'Before writing code'], 'Startup workflow documented'),
-      textHas(agents, ['Definition of Done', 'done only when'], 'Definition of done documented'),
-      textHas(agents, ['Verification Commands', './init.sh', 'test', 'verify'], 'Verification commands discoverable'),
-      textHas(agents, ['feature_list.json', 'progress.md'], 'State artifacts routed from instructions')
+      structuredHas(agents, ['Startup Workflow', 'Before writing code'], 'Startup workflow documented'),
+      structuredHas(agents, ['Definition of Done', 'done only when'], 'Definition of done documented'),
+      structuredHas(agents, ['Verification Commands', './init.sh', 'test', 'verify'], 'Verification commands discoverable'),
+      structuredHas(agents, ['feature_list.json', 'progress.md'], 'State artifacts routed from instructions')
     ],
     state: [
       hasFile(byPath, ['feature_list.json', 'feature-list.json'], 'Feature tracker exists'),
       jsonFeatureList(featureList, 'Feature tracker is valid and has feature fields'),
       hasFile(byPath, ['progress.md'], 'Progress log exists'),
-      textHas(progress, ['Current State', 'What', 'Next'], 'Progress log supports restart'),
-      textHas(handoff || progress, ['Blockers', 'Files', 'Next Session'], 'Handoff captures blockers/files/next step')
+      structuredHas(progress, ['Current State', 'What', 'Next'], 'Progress log supports restart'),
+      structuredHas(handoff || progress, ['Blockers', 'Files', 'Next Session'], 'Handoff captures blockers/files/next step')
     ],
     verification: [
       hasFile(byPath, ['init.sh'], 'Verification entrypoint exists'),
@@ -244,17 +249,17 @@ export function scoreHarness(files) {
       textHas(allText, ['Evidence', 'Verification Evidence', 'command and output'], 'Verification evidence is recorded')
     ],
     scope: [
-      textHas(agents, ['One feature at a time', 'one-feature-at-a-time'], 'One-feature-at-a-time rule exists'),
+      structuredHas(agents, ['One feature at a time', 'one-feature-at-a-time'], 'One-feature-at-a-time rule exists'),
       textHas(featureList, ['dependencies'], 'Feature dependencies are tracked'),
       textHas(agents + featureList, ['status'], 'Feature status is explicit'),
-      textHas(agents, ['Stay in scope', 'scope'], 'Scope boundary documented'),
-      textHas(agents, ['Definition of Done'], 'Completion gate limits scope closure')
+      structuredHas(agents, ['Stay in scope', 'scope'], 'Scope boundary documented'),
+      structuredHas(agents, ['Definition of Done'], 'Completion gate limits scope closure')
     ],
     lifecycle: [
       hasFile(byPath, ['init.sh'], 'Startup script exists'),
-      textHas(agents, ['End of Session', 'Before ending'], 'End-of-session procedure exists'),
+      structuredHas(agents, ['End of Session', 'Before ending'], 'End-of-session procedure exists'),
       hasFile(byPath, ['session-handoff.md'], 'Session handoff template exists'),
-      textHas(progress + handoff, ['Last Updated', 'Current Objective', 'Recommended Next Step'], 'Session restart markers exist'),
+      structuredHas(progress + '\n' + handoff, ['Last Updated', 'Current Objective', 'Recommended Next Step'], 'Session restart markers exist'),
       textHas(agents + init, ['restartable', 'clean', 'Next steps'], 'Clean restart path documented')
     ]
   };
@@ -286,6 +291,31 @@ function hasFile(byPath, names, message) {
 function textHas(text, needles, message) {
   const lower = text.toLowerCase();
   return { pass: needles.some((needle) => lower.includes(needle.toLowerCase())), message };
+}
+
+// A real instruction doc carries its load-bearing phrases in structure — headings,
+// list items, tables, fenced code, or bold lead-ins — not in free prose. Scoring only
+// the structured lines means a genuine harness still passes, while a file that just
+// sprinkles the right keywords across a paragraph to game the score does not.
+function structuredText(markdown) {
+  const kept = [];
+  let inFence = false;
+  for (const raw of markdown.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (/^(```|~~~)/.test(line)) { inFence = !inFence; continue; }
+    if (inFence) { kept.push(line); continue; }
+    if (!line) continue;
+    const isHeading = /^#{1,6}\s/.test(line);
+    const isList = /^([-*+]|\d+\.)\s/.test(line);
+    const isTable = line.startsWith('|');
+    const isBoldLead = /^\*\*[^*]+\*\*/.test(line);
+    if (isHeading || isList || isTable || isBoldLead) kept.push(line);
+  }
+  return kept.join('\n');
+}
+
+function structuredHas(markdown, needles, message) {
+  return textHas(structuredText(markdown), needles, message);
 }
 
 function jsonFeatureList(text, message) {

@@ -1,5 +1,9 @@
 #!/usr/bin/env node
+import { execFile } from 'node:child_process';
+import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
+import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import {
   formatScoreReport,
@@ -11,17 +15,20 @@ import {
   writeText
 } from './lib/harness-utils.mjs';
 
+const execFileAsync = promisify(execFile);
+
 const args = parseArgs(process.argv.slice(2));
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const skillRoot = path.resolve(scriptDir, '..');
 
 if (args.help) {
-  console.log(`Usage: node scripts/run-benchmark.mjs [--target DIR] [--output FILE] [--html FILE]
+  console.log(`Usage: node scripts/run-benchmark.mjs [--target DIR] [--output FILE] [--html FILE] [--no-self-check]
 
 Runs a lightweight harness benchmark:
-  1. Scores the current target harness.
-  2. Checks eval coverage in evals/evals.json.
-  3. Produces a JSON report and optional HTML report.
+  1. Self-check: scaffold a throwaway harness and confirm it validates (proves the scripts work).
+  2. Scores the current target harness.
+  3. Checks eval coverage in evals/evals.json.
+  4. Produces a JSON report and optional HTML report.
 
 This is a structural benchmark, not an LLM judge. Use it before/after real agent sessions.`);
   process.exit(0);
@@ -34,9 +41,11 @@ const evalPath = path.resolve(args.evals || path.join(skillRoot, 'evals', 'evals
 const harnessResult = scoreHarness(await loadHarnessFiles(target));
 const evals = await readJson(evalPath);
 const evalResult = scoreEvals(evals);
+const selfCheck = args.noSelfCheck ? { skipped: true } : await runSelfCheck();
 const report = {
   generatedAt: new Date().toISOString(),
   target,
+  selfCheck,
   harness: harnessResult,
   evals: evalResult,
   recommendation: recommend(harnessResult, evalResult)
@@ -45,6 +54,10 @@ const report = {
 await writeText(output, `${JSON.stringify(report, null, 2)}\n`);
 console.log(`Benchmark report written to ${output}`);
 console.log('');
+if (!selfCheck.skipped) {
+  console.log(`Self-check: ${selfCheck.pass ? 'PASS' : 'FAIL'} — scaffolded harness scored ${selfCheck.score}/100`);
+  if (!selfCheck.pass && selfCheck.error) console.log(`  ${selfCheck.error}`);
+}
 console.log(formatScoreReport(harnessResult, target));
 console.log(`Eval coverage: ${evalResult.score}/100 (${evalResult.passed}/${evalResult.total})`);
 console.log(`Recommendation: ${report.recommendation}`);
@@ -55,8 +68,37 @@ if (args.html) {
   console.log(`HTML benchmark report written to ${htmlPath}`);
 }
 
-if (harnessResult.overall < Number(args.minScore || 70) || evalResult.score < Number(args.minEvalScore || 80)) {
+if (
+  harnessResult.overall < Number(args.minScore || 70) ||
+  evalResult.score < Number(args.minEvalScore || 80) ||
+  selfCheck.pass === false
+) {
   process.exitCode = 1;
+}
+
+// Prove the bundled scripts actually work end-to-end: scaffold a harness into a throwaway
+// directory, then score it. A structural eval-coverage check can't catch a broken
+// create-harness.mjs — this can. Failure here means the skill ships broken, not just thin.
+async function runSelfCheck() {
+  let dir;
+  try {
+    dir = await mkdtemp(path.join(os.tmpdir(), 'harness-selfcheck-'));
+    await writeFile(
+      path.join(dir, 'package.json'),
+      JSON.stringify({ name: 'selfcheck', scripts: { check: 'tsc', test: 'vitest run', build: 'vite build' } })
+    );
+    await execFileAsync('node', [path.join(scriptDir, 'create-harness.mjs'), '--target', dir]);
+    const scored = scoreHarness(await loadHarnessFiles(dir));
+    return {
+      pass: scored.overall >= Number(args.minSelfCheckScore || 90),
+      score: scored.overall,
+      bottleneck: scored.bottleneck
+    };
+  } catch (error) {
+    return { pass: false, score: 0, error: error.message };
+  } finally {
+    if (dir) await rm(dir, { recursive: true, force: true });
+  }
 }
 
 function scoreEvals(evalsJson) {
@@ -97,8 +139,14 @@ function recommend(harnessResult, evalResult) {
 }
 
 function renderBenchmarkHtml(report) {
+  const selfCheckSection = report.selfCheck?.skipped
+    ? ''
+    : `<section>
+      <h2>Script Self-Check <span>${report.selfCheck.pass ? 'PASS' : 'FAIL'}</span></h2>
+      <p>Scaffolded a throwaway harness and scored it ${report.selfCheck.score}/100 — confirms the bundled scripts run end-to-end.${report.selfCheck.error ? ` Error: ${escapeHtml(report.selfCheck.error)}` : ''}</p>
+    </section>`;
   const evalHtml = htmlReport(report.harness, `Harness Benchmark: ${path.basename(report.target)}`)
-    .replace('</main>', `<section>
+    .replace('</main>', `${selfCheckSection}<section>
       <h2>Eval Coverage <span>${report.evals.score}/100</span></h2>
       <p>${report.evals.passed}/${report.evals.total} benchmark checks passed across ${report.evals.cases} eval cases.</p>
       <ul>${report.evals.checks.map((check) => `<li class="${check.pass ? 'pass' : 'fail'}">${check.pass ? 'PASS' : 'FAIL'} ${escapeHtml(check.message)}</li>`).join('')}</ul>
