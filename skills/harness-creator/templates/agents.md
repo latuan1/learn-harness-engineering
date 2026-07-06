@@ -9,7 +9,9 @@ Before writing code:
 1. **Confirm working directory** with `pwd`
 2. **Read this file** completely
 3. **Read project docs if present** (`docs/ARCHITECTURE.md`, `docs/PRODUCT.md`, README, or equivalent)
-4. **Run `./init.sh`** to verify environment is healthy
+4. **Run the platform verification script** to verify environment is healthy:
+   - macOS/Linux/Git Bash: `./init.sh`
+   - Windows PowerShell: `.\init.ps1`
 5. **Read `feature_list.json`** to see current feature state
 6. **Review recent commits** with `git log --oneline -5`
 
@@ -21,13 +23,14 @@ If baseline verification is failing, repair that first before adding new scope.
 - **Verification required**: Don't claim done without running verification commands
 - **Update artifacts**: Before ending session, update `progress.md` and `feature_list.json`
 - **Stay in scope**: Don't modify files unrelated to the current feature
-- **Leave clean state**: Next session must be able to run `./init.sh` immediately
+- **Leave clean state**: Next session must be able to run the platform verification script immediately
 
 ## Required Artifacts
 
 - `feature_list.json` — Feature state tracker (source of truth)
 - `progress.md` — Session continuity log
-- `init.sh` — Standard startup and verification path
+- `init.sh` — Standard startup and verification path for macOS/Linux/Git Bash
+- `init.ps1` — Standard startup and verification path for Windows PowerShell
 - `session-handoff.md` — Optional, for larger sessions
 
 ## Definition of Done
@@ -47,13 +50,18 @@ Before ending a session:
 2. Update `feature_list.json` with new feature status
 3. Record any unresolved risks or blockers
 4. Commit with descriptive message once work is in safe state
-5. Leave repo clean enough for next session to run `./init.sh` immediately
+5. Leave repo clean enough for next session to run the platform verification script immediately
 
 ## Verification Commands
 
 ```bash
-# Full verification (recommended)
+# Full verification on macOS/Linux/Git Bash
 {{PRIMARY_VERIFICATION_COMMAND}}
+```
+
+```powershell
+# Full verification on Windows PowerShell
+{{WINDOWS_VERIFICATION_COMMAND}}
 ```
 
 Required checks:

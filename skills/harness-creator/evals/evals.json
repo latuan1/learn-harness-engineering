@@ -5,13 +5,14 @@
       "id": 1,
       "name": "Minimal Harness Creation",
       "prompt": "I have a new TypeScript + React project with no agent setup. Create a minimal harness that makes my agent reliable for single-feature development.",
-      "expected_output": "AGENTS.md (~50-100 lines), feature_list.json with 3-5 placeholder features, init.sh with verification commands",
+      "expected_output": "AGENTS.md (~50-100 lines), feature_list.json with 3-5 placeholder features, init.sh and init.ps1 with verification commands",
       "files": [],
       "expectations": [
         "AGENTS.md includes startup workflow (read files, run init, check feature list)",
         "AGENTS.md includes one-feature-at-a-time policy",
         "feature_list.json has valid JSON with id, name, description, status fields",
         "init.sh runs install, type/static check, test, and build commands when available",
+        "init.ps1 provides native Windows PowerShell verification for the same detected checks",
         "All files are in project root directory"
       ]
     },
@@ -110,10 +111,11 @@
       "id": 9,
       "name": "Lifecycle Bootstrap",
       "prompt": "Every new session starts inconsistently. Design startup, hook, and handoff lifecycle rules so a new agent can resume safely.",
-      "expected_output": "Lifecycle bootstrap design with init.sh, clean-state checks, handoff reads, and hook trust boundaries",
+      "expected_output": "Lifecycle bootstrap design with init.sh/init.ps1, clean-state checks, handoff reads, and hook trust boundaries",
       "files": [],
       "expectations": [
-        "init.sh is the standard startup and verification entrypoint",
+        "init.sh is the standard startup and verification entrypoint for macOS/Linux/Git Bash",
+        "init.ps1 is the standard startup and verification entrypoint for Windows PowerShell",
         "Startup reads AGENTS.md, feature_list.json, progress.md, and handoff when present",
         "End-of-session procedure records evidence, blockers, and next step",
         "Hooks are gated by trust and failure behavior is explicit"

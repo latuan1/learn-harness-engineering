@@ -33,7 +33,7 @@
 1. Read `AGENTS.md`.
 2. Read `feature_list.json` and `progress.md`.
 3. Review this handoff.
-4. Run `./init.sh` or the documented verification command before editing.
+4. Run `./init.sh` on macOS/Linux/Git Bash, `.\init.ps1` on Windows PowerShell, or the documented verification command before editing.
 
 ## Recommended Next Step
 

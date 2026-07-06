@@ -6,7 +6,7 @@ description: >-
   handoff, memory persistence, context budgets, tool-permission safety, and multi-agent
   coordination. Use this whenever a coding agent is unreliable across sessions — forgets context,
   drifts out of scope, claims "done" before tests pass, or starts each session inconsistently —
-  or when creating or assessing AGENTS.md, CLAUDE.md, feature_list.json, init.sh, progress.md, or
+  or when creating or assessing AGENTS.md, CLAUDE.md, feature_list.json, init.sh, init.ps1, progress.md, or
   session-handoff files. Reach for it even if the user never says the word "harness."
 license: MIT
 ---
@@ -25,7 +25,7 @@ Every useful coding-agent harness has five subsystems:
 |---|---|---|
 | Instructions | `AGENTS.md` or `CLAUDE.md` | Startup path, working rules, definition of done |
 | State | `feature_list.json`, `progress.md` | Current feature, status, evidence, next step |
-| Verification | `init.sh` or documented commands | Tests/checks the agent must run before claiming done |
+| Verification | `init.sh`, `init.ps1`, or documented commands | Tests/checks the agent must run before claiming done |
 | Scope | Feature dependencies and done criteria | Prevents overreach and half-finished work |
 | Lifecycle | `session-handoff.md`, end-of-session routine | Makes the next session restartable |
 
@@ -105,6 +105,7 @@ For a usable minimal harness, leave the target project with:
 - [ ] `feature_list.json`
 - [ ] `progress.md`
 - [ ] `init.sh`
+- [ ] `init.ps1`
 - [ ] Optional `session-handoff.md` for multi-session work
 - [ ] Documented verification evidence or next action
 

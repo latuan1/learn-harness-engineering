@@ -28,9 +28,10 @@ node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project 
 - `feature_list.json`
 - `progress.md`
 - `init.sh`
+- `init.ps1`
 - `session-handoff.md`
 
-`create-harness.mjs` визначає поширені типи проєктів і пакетні менеджери. Підтримуються Node/npm/pnpm/yarn/bun, Python, Go, Rust, Maven, Gradle і .NET на базовому рівні команд верифікації.
+`create-harness.mjs` визначає поширені типи проєктів і пакетні менеджери. Підтримуються Node/npm/pnpm/yarn/bun, Python, Go, Rust, Maven, Gradle і .NET на базовому рівні команд верифікації. Скрипт створює `init.sh` для macOS/Linux/Git Bash і `init.ps1` для Windows PowerShell.
 
 ## Що перевіряється
 
@@ -72,6 +73,7 @@ harness-creator/
 │   ├── feature-list.json
 │   ├── feature-list.schema.json
 │   ├── init.sh
+│   ├── init.ps1
 │   ├── progress.md
 │   └── session-handoff.md
 ├── references/

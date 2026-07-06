@@ -28,9 +28,10 @@ The scripts use only Node.js built-in modules. They can be run after copying the
 - `feature_list.json`
 - `progress.md`
 - `init.sh`
+- `init.ps1`
 - `session-handoff.md`
 
-`create-harness.mjs` detects common project types and package managers. It supports Node/npm/pnpm/yarn/bun, Python, Go, Rust, Maven, Gradle, and .NET at a basic verification-command level.
+`create-harness.mjs` detects common project types and package managers. It supports Node/npm/pnpm/yarn/bun, Python, Go, Rust, Maven, Gradle, and .NET at a basic verification-command level. It creates both `init.sh` for macOS/Linux/Git Bash and `init.ps1` for Windows PowerShell.
 
 ## What It Checks
 
@@ -72,6 +73,7 @@ harness-creator/
 │   ├── feature-list.json
 │   ├── feature-list.schema.json
 │   ├── init.sh
+│   ├── init.ps1
 │   ├── progress.md
 │   └── session-handoff.md
 ├── references/

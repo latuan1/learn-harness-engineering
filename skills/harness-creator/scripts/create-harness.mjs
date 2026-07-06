@@ -6,6 +6,7 @@ import {
   detectPackageManager,
   detectProject,
   exists,
+  initPowerShellFromCommands,
   initScriptFromCommands,
   parseArgs,
   verificationCommands,
@@ -23,6 +24,7 @@ Creates a minimal production harness:
   progress.md
   session-handoff.md
   init.sh
+  init.ps1
 
 Existing files are skipped unless --force is set.`);
   process.exit(0);
@@ -45,7 +47,8 @@ const replacements = {
     ? 'Project harness for reliable agent-assisted development.'
     : `Project harness for reliable agent-assisted development in a ${project.stack} codebase.`,
   VERIFICATION_COMMANDS: commands.map((command) => `- \`${command}\``).join('\n'),
-  PRIMARY_VERIFICATION_COMMAND: './init.sh'
+  PRIMARY_VERIFICATION_COMMAND: './init.sh',
+  WINDOWS_VERIFICATION_COMMAND: '.\\init.ps1'
 };
 
 const results = [];
@@ -61,6 +64,14 @@ if (force || !await exists(initPath)) {
   results.push({ path: initPath, status: 'written' });
 } else {
   results.push({ path: initPath, status: 'skipped', reason: 'exists' });
+}
+
+const initPowerShellPath = path.join(target, 'init.ps1');
+if (force || !await exists(initPowerShellPath)) {
+  await writeText(initPowerShellPath, initPowerShellFromCommands(commands));
+  results.push({ path: initPowerShellPath, status: 'written' });
+} else {
+  results.push({ path: initPowerShellPath, status: 'skipped', reason: 'exists' });
 }
 
 console.log(`Created harness for ${target}`);

@@ -57,6 +57,7 @@
       "templates/feature-list.json",
       "templates/feature-list.schema.json",
       "templates/init.sh",
+      "templates/init.ps1",
       "templates/progress.md",
       "templates/session-handoff.md"
     ]

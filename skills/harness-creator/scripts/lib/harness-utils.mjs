@@ -209,8 +209,102 @@ echo "4. Re-run verification before claiming done"
 `;
 }
 
+export function initPowerShellFromCommands(commands) {
+  const body = commands.map((command) => {
+    const { label, script } = commandToPowerShell(command);
+    return `Write-Host "=== ${escapeForPowerShellDoubleQuoted(label)} ==="\n${script}`;
+  }).join('\n\n');
+
+  return `$ErrorActionPreference = 'Stop'
+
+function Invoke-HarnessCommand {
+  param([string]$Command)
+  $global:LASTEXITCODE = 0
+  Invoke-Expression $Command
+  if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+  }
+}
+
+function Invoke-HarnessCommandAllowExitCodes {
+  param([string]$Command, [int[]]$AllowedExitCodes)
+  $global:LASTEXITCODE = 0
+  Invoke-Expression $Command
+  if ($AllowedExitCodes -notcontains $LASTEXITCODE) {
+    exit $LASTEXITCODE
+  }
+}
+
+Write-Host "=== Harness Initialization ==="
+
+${body}
+
+Write-Host "=== Verification Complete ==="
+Write-Host ""
+Write-Host "Next steps:"
+Write-Host "1. Read feature_list.json to see current feature state"
+Write-Host "2. Pick ONE unfinished feature to work on"
+Write-Host "3. Implement only that feature"
+Write-Host "4. Re-run verification before claiming done"
+`;
+}
+
 function escapeForEcho(value) {
   return value.replaceAll('"', '\\"');
+}
+
+function escapeForPowerShellDoubleQuoted(value) {
+  return value
+    .replaceAll('`', '``')
+    .replaceAll('"', '`"')
+    .replaceAll('$', '`$');
+}
+
+function quoteForPowerShellSingleQuoted(value) {
+  return `'${value.replaceAll("'", "''")}'`;
+}
+
+function nativePowerShellCommand(command) {
+  return `Invoke-HarnessCommand ${quoteForPowerShellSingleQuoted(command)}`;
+}
+
+function commandToPowerShell(command) {
+  const normalized = command.trim();
+  if (/^python3 -m pytest \|\| \[ \$\? -eq 5 \]$/.test(normalized)) {
+    return {
+      label: 'python -m pytest',
+      script: `Invoke-HarnessCommandAllowExitCodes 'python -m pytest' @(0, 5)`
+    };
+  }
+  if (normalized.startsWith('python3 -m compileall ')) {
+    const translated = normalized.replace(/^python3\b/, 'python');
+    return {
+      label: translated,
+      script: nativePowerShellCommand(translated)
+    };
+  }
+  if (normalized === './gradlew test') {
+    return {
+      label: '.\\gradlew.bat test',
+      script: `if (Test-Path '.\\gradlew.bat') {
+  Invoke-HarnessCommand '.\\gradlew.bat test'
+} else {
+  Invoke-HarnessCommand 'gradle test'
+}`
+    };
+  }
+  const echoMatch = normalized.match(/^echo "([\s\S]*)"$/);
+  if (echoMatch) {
+    const translated = `Write-Host "${escapeForPowerShellDoubleQuoted(echoMatch[1])}"`;
+    return {
+      label: translated,
+      script: translated
+    };
+  }
+  return {
+    label: normalized,
+    script: nativePowerShellCommand(normalized)
+  };
 }
 
 export function dedupe(values) {
@@ -223,7 +317,7 @@ export function scoreHarness(files) {
   const agents = byPath.get('AGENTS.md') || byPath.get('CLAUDE.md') || '';
   const featureList = byPath.get('feature_list.json') || byPath.get('feature-list.json') || '';
   const progress = byPath.get('progress.md') || '';
-  const init = byPath.get('init.sh') || '';
+  const init = [byPath.get('init.sh'), byPath.get('init.ps1')].filter(Boolean).join('\n');
   const handoff = byPath.get('session-handoff.md') || '';
 
   const checks = {
@@ -231,7 +325,7 @@ export function scoreHarness(files) {
       hasFile(byPath, ['AGENTS.md', 'CLAUDE.md'], 'Agent instruction file exists'),
       structuredHas(agents, ['Startup Workflow', 'Before writing code'], 'Startup workflow documented'),
       structuredHas(agents, ['Definition of Done', 'done only when'], 'Definition of done documented'),
-      structuredHas(agents, ['Verification Commands', './init.sh', 'test', 'verify'], 'Verification commands discoverable'),
+      structuredHas(agents, ['Verification Commands', './init.sh', '.\\init.ps1', 'test', 'verify'], 'Verification commands discoverable'),
       structuredHas(agents, ['feature_list.json', 'progress.md'], 'State artifacts routed from instructions')
     ],
     state: [
@@ -242,8 +336,8 @@ export function scoreHarness(files) {
       structuredHas(handoff || progress, ['Blockers', 'Files', 'Next Session'], 'Handoff captures blockers/files/next step')
     ],
     verification: [
-      hasFile(byPath, ['init.sh'], 'Verification entrypoint exists'),
-      textHas(init, ['set -e'], 'Verification fails fast'),
+      hasFile(byPath, ['init.sh', 'init.ps1'], 'Verification entrypoint exists'),
+      textHas(init, ['set -e', "$ErrorActionPreference = 'Stop'"], 'Verification fails fast'),
       textHas(init + agents, ['test', 'pytest', 'vitest', 'cargo test', 'go test', 'dotnet test'], 'Test command documented'),
       textHas(init + agents, ['build', 'type', 'lint', 'compile'], 'Static/build check documented'),
       textHas(allText, ['Evidence', 'Verification Evidence', 'command and output'], 'Verification evidence is recorded')
@@ -256,7 +350,7 @@ export function scoreHarness(files) {
       structuredHas(agents, ['Definition of Done'], 'Completion gate limits scope closure')
     ],
     lifecycle: [
-      hasFile(byPath, ['init.sh'], 'Startup script exists'),
+      hasFile(byPath, ['init.sh', 'init.ps1'], 'Startup script exists'),
       structuredHas(agents, ['End of Session', 'Before ending'], 'End-of-session procedure exists'),
       hasFile(byPath, ['session-handoff.md'], 'Session handoff template exists'),
       structuredHas(progress + '\n' + handoff, ['Last Updated', 'Current Objective', 'Recommended Next Step'], 'Session restart markers exist'),
@@ -341,7 +435,8 @@ export async function loadHarnessFiles(root) {
     'feature-list.json',
     'progress.md',
     'session-handoff.md',
-    'init.sh'
+    'init.sh',
+    'init.ps1'
   ];
   const files = [];
   for (const candidate of candidates) {
